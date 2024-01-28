@@ -3,7 +3,13 @@
 
 int main(int n)
 {
-    int n = get_int("Height: ");
+    int n;
+    do
+    {
+        n = get_int("Height: ");
+    }
+    while
+
 
     for(int i, i < n, i--)
     {
