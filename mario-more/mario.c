@@ -7,6 +7,7 @@ int main(void)
 
     while num > 0
     {
-        printf(" " * (num - 1)"#")
+        printf(" " * (num - 1) + "#" + "  " + " " * (num - 1)  + "\n");
+        num --;
     }
 }
