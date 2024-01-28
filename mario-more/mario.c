@@ -10,7 +10,7 @@ int main(void)
     }
     while (n > 0 && n < 9);
 
-    for(int i, i < n, i--)
+    for(int i = 0, i < n, i--)
     {
         printf(" " * (n - 1) + "#" + "  " + "\n");
         n --;
