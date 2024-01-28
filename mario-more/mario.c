@@ -8,7 +8,7 @@ int main(int n)
     {
         n = get_int("Height: ");
     }
-    while
+    while (n > 0 && n < 9);
 
 
     for(int i, i < n, i--)
