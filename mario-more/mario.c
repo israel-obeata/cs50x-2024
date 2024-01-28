@@ -1,7 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-int main(int n)
+int main(void)
 {
     int n;
     do
@@ -13,8 +13,8 @@ int main(int n)
 
     for(int i, i < n, i--)
     {
-        printf(" " * (num - 1) + "#" + "  " + "\n");
-        num --;
+        printf(" " * (n - 1) + "#" + "  " + "\n");
+        n --;
     }
 }
 
