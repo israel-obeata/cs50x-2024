@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    int num = get_int();
+    int num = get_int("");
 
     while num > 0
     {
