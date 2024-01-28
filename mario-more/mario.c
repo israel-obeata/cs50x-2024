@@ -3,7 +3,7 @@
 
 int main(int n)
 {
-    int n = get_int("");
+    int n = get_int("Height: ");
 
     for(int i, i < n, i--)
     {
@@ -15,5 +15,5 @@ int main(int n)
 
 void fun(int n)
 {
-    
+
 }
