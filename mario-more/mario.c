@@ -7,6 +7,6 @@ int main(void)
 
     while num > 0
     {
-        printf(" " * num"#")
+        printf(" " * (num - 1)"#")
     }
 }
