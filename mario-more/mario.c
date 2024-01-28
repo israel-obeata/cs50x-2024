@@ -13,7 +13,7 @@ int main(int n)
 
     for(int i, i < n, i--)
     {
-        printf(" " * (num - 1) + "#" + "  " + " " * (num - 1)  + "\n");
+        printf(" " * (num - 1) + "#" + "  " + "\n");
         num --;
     }
 }
