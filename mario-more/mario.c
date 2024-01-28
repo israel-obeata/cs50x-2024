@@ -19,7 +19,3 @@ int main(int n)
 }
 
 
-void fun(int n)
-{
-
-}
