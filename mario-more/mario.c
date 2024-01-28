@@ -20,8 +20,7 @@ int main(void)
         {
             printf("#")
         }
-        printf(" " * (n - 1) + "#" + "  " + "\n");
-        n --;
+
     }
 }
 
