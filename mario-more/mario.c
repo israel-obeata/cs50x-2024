@@ -10,11 +10,15 @@ int main(void)
     }
     while (n > 0 && n < 9);
 
-    for (int i = 0; i < n; i--)
+    for (int i = 0; i < n + 1; i--)
     {
-        for (in j = 0; j < n; j--)
+        for (int j = 0; j < n; j--)
         {
             printf(" ")
+        }
+        for (int j =0;)
+        {
+            printf("#")
         }
         printf(" " * (n - 1) + "#" + "  " + "\n");
         n --;
