@@ -51,10 +51,7 @@ bool checksum(long long ccn)
 
 void print_credit_card_brand(long long ccn)
 {
-    int first_digit = card_number / (10 * (length - 1));
-    int second_digit = card_number % (10 * (length - 1)) / (10 * (length - 2));
-
-    if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
+    if (ccn >= 34e13 && ccn <= 35e13)
     {
         printf("AMEX\n");
     }
