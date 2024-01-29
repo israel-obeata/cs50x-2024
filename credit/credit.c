@@ -20,7 +20,7 @@ int main(void)
 
 bool check_validity(long long card_number)
 {
-
+    int len = find_length(card_number);
 }
 
 bool check_sum(long long card_number, int length)
