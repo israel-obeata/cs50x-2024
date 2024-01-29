@@ -9,7 +9,7 @@ int main(void)
     long long card_number;
     do
     {
-        card_number = get_long("Number: ");
+        card_number = get_long_long("Number: ");
     }
     while (card_number <= 0);
 
