@@ -45,29 +45,7 @@ bool checksum(long long ccn)
             sum += digit / 10 + digit % 10;
         }
     }
-}
-
-bool check_sum(long long card_number, int length)
-{
-    int sum = 0;
-    int count = 0;
-
-    while (card_number > 0)
-    {
-        int digit = card_number % 10;
-        card_number /= 10;
-
-        if (count % 2 == 1)
-        {
-            digit *= 2;
-            digit = digit / 10 + digit % 10;
-        }
-
-        sum += digit;
-        count++;
-    }
-
-    return sum % 10 != 0;
+    return sum % 10 == 0;
 }
 
 
