@@ -24,7 +24,7 @@ int main(void)
     //int second_digit = card_number / (long long)pow(10, length - 2) % 10;
     // 46817
 
-    int first_digit = card_number /;
+    int first_digit = card_number / (10 * length);
     int second_digit = card_number;
 
     if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
