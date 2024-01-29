@@ -32,6 +32,11 @@ int find_length(long long n)
     return len;
 }
 
+bool checksum(long long num)
+{
+    
+}
+
 bool check_sum(long long card_number, int length)
 {
     int sum = 0;
