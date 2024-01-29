@@ -1,11 +1,9 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool check_sum(long card_number, int length);
-void check_type(long card_number, int length);
-
 int main(void)
 {
+    // Prompt user for credit card number
     long long card_number;
     do
     {
@@ -13,26 +11,7 @@ int main(void)
     }
     while (card_number <= 0);
 
-    int length = 0;
-    long long number_copy = card_number;
-    while (number_copy > 0)
-    {
-        length++;
-        number_copy /= 10;
-    }
-
-    if ((length != 13 && length != 15 && length != 16) || check_sum(card_number, length) == false)
-    {
-        printf("INVALID\n");
-    }
-    else
-    {
-        check_type(card_number, length);
-    }
-}
-
-bool check_sum(long card_number, int length)
-{
+    // Calculate checksum using Luhn's Algorithm
     int sum = 0;
     int count = 0;
 
@@ -44,36 +23,38 @@ bool check_sum(long card_number, int length)
         if (count % 2 == 1)
         {
             digit *= 2;
-            digit = digit / 10 + digit % 10; 
+            digit = digit / 10 + digit % 10; // Add digits of products
         }
 
         sum += digit;
         count++;
     }
 
-    return sum % 10 != 0;
-}
-
-
-void check_type(long card_number, int length)
-{
-    int first_digit = card_number / (10 * (length - 1));
-    int second_digit = card_number % (10 * (length - 1)) / (10 * (length - 2));
-
-    if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
+    // Check the card's validity and card type
+    if (sum % 10 == 0)
     {
-        printf("AMEX\n");
-    }
-    else if (first_digit == 5 && (second_digit >= 1 && second_digit <= 5))
-    {
-        printf("MASTERCARD\n");
-    }
-    else if (first_digit == 4)
-    {
-        printf("VISA\n");
+        // Determine card type
+        if (count == 15 && (card_number == 34 || card_number == 37))
+        {
+            printf("AMEX\n");
+        }
+        else if (count == 16 && (card_number >= 51 && card_number <= 55))
+        {
+            printf("MASTERCARD\n");
+        }
+        else if ((count == 13 || count == 16) && (card_number / 1000000000000 == 4 || card_number / 1000000000000000 == 4))
+        {
+            printf("VISA\n");
+        }
+        else
+        {
+            printf("INVALID\n");
+        }
     }
     else
     {
         printf("INVALID\n");
     }
+
+    
 }
