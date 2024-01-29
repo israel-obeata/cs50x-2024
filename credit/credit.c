@@ -32,9 +32,10 @@ int find_length(long long n)
     return len;
 }
 
-bool checksum(long long num)
+bool checksum(long long ccn)
 {
-    
+    int sum = 0;
+    for (int i = 0; ccn == 0; i++, ccn /= 10)
 }
 
 bool check_sum(long long card_number, int length)
