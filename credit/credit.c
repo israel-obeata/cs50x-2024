@@ -46,24 +46,24 @@ int main(void)
     }
 
 
-    int sum1 = 0;
+    int sum = 0;
     for (int i = 0; i < length; i++)
     {
         int digit = card_number % 10;
         if (i % 2 == 0)
         {
-            sum1 += digit;
+            sum += digit;
         }
         else
         {
             int doubled_digit = digit * 2;
-            sum1 += doubled_digit % 10 + (doubled_digit / 10);
+            sum1 += doubled_digit;
         }
         card_number /= 10;
     }
 
     // Check validity
-    if (sum1 % 10 != 0)
+    if (sum % 10 != 0)
     {
         printf("INVALID\n");
     }
