@@ -23,7 +23,7 @@ int main(void)
     //int first_digit = card_number / (long long)pow(10, length - 1);
     //int second_digit = card_number / (long long)pow(10, length - 2) % 10;
 
-    string str_number = (string) card_number;
+    char str;
 
     int first_digit = str_number[0];
     int second_digit = str_number[1];
