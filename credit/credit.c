@@ -32,7 +32,7 @@ bool check_validity(long long card_number)
 int find_length(long long n)
 {
     int len;
-    for (len = 0; len != 0; n /= 10, len++);
+    for (len = 0; n != 0; n /= 10, len++);
     return len;
 }
 
