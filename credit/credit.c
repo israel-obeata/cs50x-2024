@@ -14,7 +14,8 @@ int main(void)
         length++;
         number_copy /= 10;
     }
-    if (length != 13 && length != 15 && length != 16) {
+    if (length != 13 && length != 15 && length != 16)
+    {
         printf("INVALID\n");
     }
 
