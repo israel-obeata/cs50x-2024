@@ -6,10 +6,15 @@ void check_type(long card_number, int length);
 
 int main(void)
 {
-    long card_number = get_long("Number: ");
+    long long card_number;
+    do
+    {
+        card_number = get_long("Number: ");
+    }
+    while (card_number <= 0);
 
     int length = 0;
-    long number_copy = card_number;
+    long long number_copy = card_number;
     while (number_copy > 0)
     {
         length++;
@@ -39,7 +44,7 @@ bool check_sum(long card_number, int length)
         if (count % 2 == 1)
         {
             digit *= 2;
-            digit = digit / 10 + digit % 10; // Add digits of products
+            digit = digit / 10 + digit % 10; 
         }
 
         sum += digit;
