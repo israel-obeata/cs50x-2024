@@ -49,7 +49,7 @@ bool checksum(long long ccn)
 }
 
 
-void check_type(long long card_number, int length)
+void print_credit_card_brand(long long ccn)
 {
     int first_digit = card_number / (10 * (length - 1));
     int second_digit = card_number % (10 * (length - 1)) / (10 * (length - 2));
