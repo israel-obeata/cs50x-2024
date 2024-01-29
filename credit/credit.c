@@ -25,6 +25,11 @@ bool check_validity(long long card_number)
     return (len == 13 || len == 15 || len == 16) && checksum(card_number);
 }
 
+int find_length(long long n)
+{
+    
+}
+
 bool check_sum(long long card_number, int length)
 {
     int sum = 0;
