@@ -18,6 +18,10 @@ int main(void)
     {
         printf("INVALID\n");
     }
+    else
+    {
+        
+    }
 
 
     int first_digit = card_number / (10 * (length - 1));
