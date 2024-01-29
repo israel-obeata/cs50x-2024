@@ -54,7 +54,7 @@ void print_credit_card_brand(long long ccn)
     if ((ccn >= 34e13 && ccn <= 35e13) || ccn >= 37e13 && ccn <= 38e13)
         printf("AMEX\n");
 
-    else if (first_digit == 5 && (second_digit >= 1 && second_digit <= 5))
+    else if (ccn >= 54e14 && ccn <= 56e14)
         printf("MASTERCARD\n");
 
     else if (first_digit == 4)
