@@ -6,7 +6,7 @@ int main(void)
     // Prompt user for card number
     long card_number = get_long("Number: ");
 
-    // Check card length
+
     int length = 0;
     long number_copy = card_number;
     while (number_copy > 0)
@@ -19,10 +19,6 @@ int main(void)
         printf("INVALID\n");
     }
 
-    // Check card type
-    //int first_digit = card_number / (long long)pow(10, length - 1);
-    //int second_digit = card_number / (long long)pow(10, length - 2) % 10;
-    // 46817
 
     int first_digit = card_number / (10 * (length - 1));
     int second_digit = card_number % (10 * (length - 1)) / (10 * (length - 2));
@@ -45,7 +41,7 @@ int main(void)
         return 0;
     }
 
-    // Apply Luhn's algorithm
+
     int sum1 = 0;
     for (int i = 0; i < length; i++)
     {
