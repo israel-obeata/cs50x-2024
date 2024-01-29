@@ -29,19 +29,21 @@ int main(void)
 bool check_sum(long card_number, int length)
 {
     int sum = 0;
-    for (int i = 0; i < length; i++)
+    int count = 0;
+
+    while (card_number > 0)
     {
         int digit = card_number % 10;
-        if (i % 2 == 0)
-        {
-            sum += digit;
-        }
-        else
-        {
-            int doubled_digit = digit * 2;
-            sum += doubled_digit;
-        }
         card_number /= 10;
+
+        if (count % 2 == 1)
+        {
+            digit *= 2;
+            digit = digit / 10 + digit % 10; // Add digits of products
+        }
+
+        sum += digit;
+        count++;
     }
 
     return sum % 10 != 0;
