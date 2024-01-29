@@ -36,6 +36,14 @@ bool checksum(long long ccn)
 {
     int sum = 0;
     for (int i = 0; ccn == 0; i++, ccn /= 10)
+    {
+        if (i % 2 == 0)
+            sum += ccn % 10
+        else
+        {
+            
+        }
+    }
 }
 
 bool check_sum(long long card_number, int length)
