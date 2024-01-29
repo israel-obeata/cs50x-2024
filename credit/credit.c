@@ -4,7 +4,7 @@
 int main(void)
 {
     // Prompt user for card number
-    long num = get_long("Number: ");
+    long card_number = get_long("Number: ");
 
     // Check card length
     int length = 0;
@@ -20,8 +20,14 @@ int main(void)
     }
 
     // Check card type
-    int first_digit = card_number / (long long)pow(10, length - 1);
-    int second_digit = card_number / (long long)pow(10, length - 2) % 10;
+    //int first_digit = card_number / (long long)pow(10, length - 1);
+    //int second_digit = card_number / (long long)pow(10, length - 2) % 10;
+
+    str_number = (string) card_number
+
+    int first_digit = str_number[0]
+    int second_digit = str_number[1]
+
     if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
     {
         printf("AMEX\n");
