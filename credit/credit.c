@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool check_sum(card_number, length);
-void check_type(card_number, length);
+bool check_sum(long card_number, int length);
+void check_type(long card_number, int length);
 
 int main(void)
 {
@@ -26,7 +26,7 @@ int main(void)
     }
 }
 
-bool check_sum(card_number, length)
+bool check_sum(long card_number, int length)
 {
     int sum = 0;
     for (int i = 0; i < length; i++)
@@ -39,7 +39,7 @@ bool check_sum(card_number, length)
         else
         {
             int doubled_digit = digit * 2;
-            sum1 += doubled_digit;
+            sum += doubled_digit;
         }
         card_number /= 10;
     }
@@ -48,7 +48,7 @@ bool check_sum(card_number, length)
 }
 
 
-void check_type(card_number, length)
+void check_type(long card_number, int length)
 {
     int first_digit = card_number / (10 * (length - 1));
     int second_digit = card_number % (10 * (length - 1)) / (10 * (length - 2));
