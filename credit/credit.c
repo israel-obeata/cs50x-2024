@@ -13,6 +13,11 @@ int main(void)
     }
     while (card_number <= 0);
 
+    if (check_validity(card_number))
+        print_credit_card_brand(card_number);
+    else
+        printf("INVALID\n");
+
     int length = 0;
     long long number_copy = card_number;
     while (number_copy > 0)
