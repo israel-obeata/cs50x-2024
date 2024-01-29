@@ -49,16 +49,16 @@ bool checksum(long long ccn)
             sum += digit / 10 + digit % 10;
         }
     }
-    return sum % 10 == 0;
+    return (sum % 10) == 0;
 }
 
 
 void print_credit_card_brand(long long ccn)
 {
-    if ((ccn >= 34e13 && ccn <= 35e13) || ccn >= 37e13 && ccn <= 38e13)
+    if ((ccn >= 34e13 && ccn <= 35e13) || (ccn >= 37e13 && ccn < 38e13))
         printf("AMEX\n");
 
-    else if (ccn >= 54e14 && ccn <= 56e14)
+    else if (ccn >= 54e14 && ccn < 56e14)
         printf("MASTERCARD\n");
 
     else if ((ccn >= 4e12 && ccn< 5e12) || (ccn >= 4e15 && ccn < 5e15))
