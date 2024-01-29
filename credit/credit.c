@@ -1,8 +1,8 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool sum0(card_number, length);
-void check_start(card_number, length);
+bool check_sum(card_number, length);
+void check_type(card_number, length);
 
 int main(void)
 {
@@ -22,7 +22,7 @@ int main(void)
     }
     else
     {
-        bool is_sum_0 = sum0(card_number, length);
+        bool is_sum_0 = check_sum(card_number, length);
 
         if (is_sum_0 == false)
         {
@@ -30,20 +30,14 @@ int main(void)
         }
         else
         {
-            check_start(card_number, length);
+            check_type(card_number, length);
         }
     }
-
-
-
-
-
-
 
 }
 
 
-bool sum0(card_number, length)
+bool check_sum(card_number, length)
 {
     int sum = 0;
     for (int i = 0; i < length; i++)
