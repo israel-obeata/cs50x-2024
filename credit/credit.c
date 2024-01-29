@@ -16,26 +16,15 @@ int main(void)
         number_copy /= 10;
     }
 
-    if (length != 13 && length != 15 && length != 16)
+    if ((length != 13 && length != 15 && length != 16) || check_sum(card_number, length) == false)
     {
         printf("INVALID\n");
     }
     else
     {
-        bool is_sum_0 = check_sum(card_number, length);
-
-        if (is_sum_0 == false)
-        {
-            printf("INVALID\n");
-        }
-        else
-        {
-            check_type(card_number, length);
-        }
+        check_type(card_number, length);
     }
-
 }
-
 
 bool check_sum(card_number, length)
 {
@@ -55,7 +44,6 @@ bool check_sum(card_number, length)
         card_number /= 10;
     }
 
-    // Check validity
     return sum % 10 != 0;
 }
 
@@ -80,7 +68,5 @@ void check_type(card_number, length)
     else
     {
         printf("INVALID\n");
-        return 0;
     }
-
 }
