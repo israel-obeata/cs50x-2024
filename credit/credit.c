@@ -59,7 +59,7 @@ int main(void)
     }
 
     // Check validity
-    if (sum1 % 10 != 0)
+    if (sum1 % 10 != 0 || (length != 13 && length != 15 && length != 16))
     {
         printf("INVALID\n");
     }
