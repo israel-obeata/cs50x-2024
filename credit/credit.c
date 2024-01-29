@@ -6,7 +6,6 @@ bool checksum(long long ccn);
 bool check_validity(long long card_number);
 void print_credit_card_brand(long long ccn);
 
-
 int main(void)
 {
     long long card_number;
@@ -32,7 +31,8 @@ bool check_validity(long long card_number)
 int find_length(long long n)
 {
     int len;
-    for (len = 0; n != 0; n /= 10, len++);
+    for (len = 0; n != 0; n /= 10, len++)
+    ;
     return len;
 }
 
@@ -52,7 +52,6 @@ bool checksum(long long ccn)
     return (sum % 10) == 0;
 }
 
-
 void print_credit_card_brand(long long ccn)
 {
     if ((ccn >= 34e13 && ccn <= 35e13) || (ccn >= 37e13 && ccn < 38e13))
@@ -61,10 +60,9 @@ void print_credit_card_brand(long long ccn)
     else if (ccn >= 51e14 && ccn < 56e14)
         printf("MASTERCARD\n");
 
-    else if ((ccn >= 4e12 && ccn< 5e12) || (ccn >= 4e15 && ccn < 5e15))
+    else if ((ccn >= 4e12 && ccn < 5e12) || (ccn >= 4e15 && ccn < 5e15))
         printf("VISA\n");
 
     else
         printf("INVALID\n");
-
 }
