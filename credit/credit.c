@@ -22,11 +22,10 @@ int main(void)
     // Check card type
     //int first_digit = card_number / (long long)pow(10, length - 1);
     //int second_digit = card_number / (long long)pow(10, length - 2) % 10;
+    // 46817
 
-    char str;
-
-    int first_digit = str_number[0];
-    int second_digit = str_number[1];
+    int first_digit = card_number /;
+    int second_digit = card_number;
 
     if (first_digit == 3 && (second_digit == 4 || second_digit == 7))
     {
