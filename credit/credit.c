@@ -38,10 +38,11 @@ bool checksum(long long ccn)
     for (int i = 0; ccn == 0; i++, ccn /= 10)
     {
         if (i % 2 == 0)
-            sum += ccn % 10
+            sum += ccn % 10;
         else
         {
-            
+            int digit = 2 * (ccn % 10);
+            sum += digit / 10 + digit % 10;
         }
     }
 }
