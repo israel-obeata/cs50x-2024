@@ -57,7 +57,7 @@ void print_credit_card_brand(long long ccn)
     else if (ccn >= 54e14 && ccn <= 56e14)
         printf("MASTERCARD\n");
 
-    else if (first_digit == 4)
+    else if ((ccn >= 4e12 && ccn< 5e12) || (ccn >= 4e15 && ccn < 5e15))
         printf("VISA\n");
 
     else
