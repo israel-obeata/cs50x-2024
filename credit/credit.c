@@ -1,8 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 
-bool check_sum(long long card_number, int length);
-void check_type(long long card_number, int length);
+
 
 int main(void)
 {
@@ -17,23 +16,11 @@ int main(void)
         print_credit_card_brand(card_number);
     else
         printf("INVALID\n");
+}
 
-    int length = 0;
-    long long number_copy = card_number;
-    while (number_copy > 0)
-    {
-        length++;
-        number_copy /= 10;
-    }
+bool check_validity(long long card_number)
+{
 
-    if ((length != 13 && length != 15 && length != 16) || check_sum(card_number, length) == false)
-    {
-        printf("INVALID\n");
-    }
-    else
-    {
-        check_type(card_number, length);
-    }
 }
 
 bool check_sum(long long card_number, int length)
