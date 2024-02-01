@@ -1,5 +1,5 @@
-#include <ctype.h>
 #include <cs50.h>
+#include <ctype.h>
 #include <math.h>
 #include <stdio.h>
 #include <string.h>
@@ -19,7 +19,7 @@ int main(void)
         {
             letters++;
         }
-        if ((i == 0 && s[i] != ' ') || (i != i - 1 && s[i] == ' ' && s[i+1] != ' '))
+        if ((i == 0 && s[i] != ' ') || (i != i - 1 && s[i] == ' ' && s[i + 1] != ' '))
         {
             words++;
         }
