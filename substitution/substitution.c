@@ -2,6 +2,8 @@
 #include <ctype.h>
 #include <stdio.h>
 
+bool is_valid_key(string s);
+
 int main(int argc, string argv[])
 {
     if (argc != 2)
@@ -14,4 +16,10 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
+    string plaintext = get_string("plaintext: ");
+}
+
+bool is_valid_key(string s)
+{
+
 }
