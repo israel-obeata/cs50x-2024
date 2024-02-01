@@ -19,6 +19,6 @@ int main(void)
         {
             letters++;
         }
-        if (s[i])
+        if ((i == 0 && s[i] != ' ') || (s[i] == ' ' && s[i+1]))
     }
 }
