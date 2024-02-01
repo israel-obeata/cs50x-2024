@@ -33,10 +33,8 @@ bool is_valid_key(string s)
             return false;
 
         int index = toupper(s[i]) - 'A';
-        if (freq[index] > 0)
-        {
+        if (freq[index] == 1) // already exist
             return false;
-        }
         freq[index]++;
     }
 }
