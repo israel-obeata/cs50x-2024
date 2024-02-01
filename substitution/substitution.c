@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
+#include <string.h>
 
 bool is_valid_key(string s);
 
@@ -21,5 +22,13 @@ int main(int argc, string argv[])
 
 bool is_valid_key(string s)
 {
+    int len = strlen(s);
+    if (len != 26)
+        return false;
 
+    for (int i = 0; i < len; i++)
+    {
+        if (!isalpha(s[i]))
+            return false;
+    }
 }
