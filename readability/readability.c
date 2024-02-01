@@ -30,6 +30,14 @@ int count_letters(string text)
 
 int count_words(string text)
 {
+    for (int i , len = strlen(text); i < len; i++)
+    {
+        print(text[i])
+        if (i == 0)
+        {
+            print("i==0: text[i]=%i",i)
+        }
+    }
     // Return the number of words in text
 }
 
