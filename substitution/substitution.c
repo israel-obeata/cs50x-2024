@@ -26,9 +26,17 @@ bool is_valid_key(string s)
     if (len != 26)
         return false;
 
+    freq[26] = {0};
     for (int i = 0; i < len; i++)
     {
         if (!isalpha(s[i]))
             return false;
+
+        int index = toupper(s[i]) - 'A';
+        if (freq[index] > 0)
+        {
+            return false;
+        }
+        freq[index]++;
     }
 }
