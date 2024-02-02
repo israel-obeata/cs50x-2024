@@ -17,8 +17,22 @@ int main(int argc, string argv[])
         printf("Key must contain 26 characters.\n");
         return 1;
     }
-    string plaintext = get_string("plaintext: ");
-    string 
+    string plaintext = get_string("plaintext:  "); // Hello!
+    printf("ciphertext: ");
+    for (int i = 0, len = strlen(plaintext); i < len; i++)
+    {
+        if (isalpha(plaintext[i]))
+        {
+            int index = toupper(plaintext[i]) - 'A'; // Find the index of the current character's position in the alphabet
+            if (plaintext[i] >= 'A' && plaintext[i] <= 'Z')
+                printf("%c", toupper(argv[1][index])); // YTNSHKVEFXRBAUQZCLWDMIPGJO
+            else
+                printf("%c", tolower(argv[1][index]));
+        }
+        else
+            printf("%c", plaintext[i]);
+    }
+    printf("\n");
 }
 
 bool is_valid_key(string s)
@@ -27,7 +41,7 @@ bool is_valid_key(string s)
     if (len != 26)
         return false;
 
-    freq[26] = {0};
+    int freq[26] = {0};
     for (int i = 0; i < len; i++)
     {
         if (!isalpha(s[i]))
