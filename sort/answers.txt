@@ -8,4 +8,4 @@ How do you know?: It ran the fastest on a random list.
 
 sort3 uses: Selection Sort
 
-How do you know?: It was the only option left.
+How do you know?: It was the only option left. And also, it 
