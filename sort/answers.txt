@@ -4,7 +4,7 @@ How do you know?: It ran the fastest on the sorted list.
 
 sort2 uses: Merge Sort
 
-How do you know?: TODO
+How do you know?: It ran the fastest on a random list.
 
 sort3 uses: Selection Sort
 
