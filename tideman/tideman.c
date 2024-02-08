@@ -153,6 +153,15 @@ void add_pairs(void)
     return;
 }
 
+int compare(const void*elem1,const void *elem2)
+{
+    pair f = *((pair*) elem1);
+    pair s = *((pair*) elem2);
+    int first_margin = preferences[f.winner][f.loser] - preferences[f.loser][f.winner];
+    int second_margin = preferences[s.winner][s.loser] - preferences[s.loser][s.winner];
+    return second_margin - first_margin;
+}
+
 // Sort pairs in decreasing order by strength of victory
 void sort_pairs(void)
 {
