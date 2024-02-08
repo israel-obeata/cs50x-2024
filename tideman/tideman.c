@@ -95,10 +95,16 @@ int main(int argc, string argv[])
     return 0;
 }
 
+int get_index(string name)
+{
+    
+}
+
 // Update ranks given a new vote
 bool vote(int rank, string name, int ranks[])
 {
     // TODO
+    int candidate_index= get_index(name);
     return false;
 }
 
