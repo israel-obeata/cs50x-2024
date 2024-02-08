@@ -157,6 +157,7 @@ void add_pairs(void)
 void sort_pairs(void)
 {
     // TODO
+    qsort(pairs, pair_count, sizeof(pair), compare);
     return;
 }
 
