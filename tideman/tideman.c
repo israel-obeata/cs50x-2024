@@ -110,6 +110,10 @@ bool vote(int rank, string name, int ranks[])
 {
     // TODO
     int candidate_index= get_index(name);
+    if (candidate_index != -1)
+    {
+        
+    }
     return false;
 }
 
