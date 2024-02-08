@@ -112,7 +112,8 @@ bool vote(int rank, string name, int ranks[])
     int candidate_index= get_index(name);
     if (candidate_index != -1)
     {
-        
+        ranks[rank] = candidate_index;
+        return true;
     }
     return false;
 }
