@@ -174,6 +174,16 @@ void sort_pairs(void)
 void lock_pairs(void)
 {
     // TODO
+    for(int i=0;i< pair_count; i++)
+    {
+        locked[pais[i].winner][pairs[i].loser]= true;
+        // check for cycle in this directed grah
+        if (has_cycle(i))
+        {
+
+        }
+    }
+
     return;
 }
 
