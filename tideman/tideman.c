@@ -170,6 +170,20 @@ void sort_pairs(void)
     return;
 }
 
+bool has_cycle_helper(int index, bool visited])
+{
+    if(visited[index])
+        return true;
+    visited[index] = true;
+    for(int i = 0;i < candidate_count; i++)
+    {
+        if(locked[index][i] && has_cycle_helper(i, visited))
+            return true;
+    }
+    return false;
+}
+
+
 bool has_cycle(int starting_index)
 {
 
