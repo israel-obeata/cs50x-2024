@@ -226,7 +226,7 @@ int get_source()
 void print_winner(void)
 {
     // TODO
-    int index=get_source();
+    int index = get_source();
     if (index != -1)
         printf("%s\n", candidates[index]);
 }
