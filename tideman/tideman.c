@@ -209,7 +209,7 @@ bool is_source(int index)
 {
     for (int i = 0; i < candidate_count; i++)
         if (locked[i][index])
-            return false,
+            return false;
     return true;
 }
 
@@ -228,5 +228,5 @@ void print_winner(void)
     // TODO
     int index=get_source();
     if (index != -1)
-        printf("%s\n",，candidates[index]);
+        printf("%s\n", candidates[index]);
 }
