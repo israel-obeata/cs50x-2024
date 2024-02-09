@@ -172,12 +172,12 @@ void sort_pairs(void)
 
 bool has_cycle_helper(int index, bool visited])
 {
-    if(visited[index])
+    if (visited[index])
         return true;
     visited[index] = true;
-    for(int i = 0;i < candidate_count; i++)
+    for (int i = 0;i < candidate_count; i++)
     {
-        if(locked[index][i] && has_cycle_helper(i, visited))
+        if (locked[index][i] && has_cycle_helper(i, visited))
             return true;
     }
     return false;
@@ -186,8 +186,8 @@ bool has_cycle_helper(int index, bool visited])
 bool has_cycle(int starting_index)
 {
     bool visited[candidate_count];
-    for(int i=0;i<candidate_count; i++)
-        visited[i]= false;
+    for (int i = 0;i < candidate_count; i++)
+        visited[i] = false;
     return has_cycle_helper(starting_index, visited);
 }
 
@@ -195,13 +195,22 @@ bool has_cycle(int starting_index)
 void lock_pairs(void)
 {
     // TODO
-    for(int i=0;i< pair_count; i++)
+    for (int i = 0; i < pair_count; i++)
     {
-        locked[pais[i].winner][pairs[i].loser]= true;
+        locked[pais[i].winner][pairs[i].loser] = true;
         // check for cycle in this directed graph starting with the ith candidate
         if (has_cycle(i))
-            locked[pais[i].winner][pairs[i].loser]= false;
+            locked[pais[i].winner][pairs[i].loser] = false;
     }
+}
+
+int get_source()
+{
+    for (int i = 0; i < candidate_count; i++)
+        if (is_source(i))
+            return i;
+    return -1;
+
 }
 
 // Print the winner of the election
