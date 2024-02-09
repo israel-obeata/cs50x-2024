@@ -177,7 +177,7 @@ void lock_pairs(void)
     for(int i=0;i< pair_count; i++)
     {
         locked[pais[i].winner][pairs[i].loser]= true;
-        // check for cycle in this directed grah
+        // check for cycle in this directed graph starting with the ith candidate
         if (has_cycle(i))
         {
 
