@@ -172,7 +172,7 @@ void sort_pairs(void)
 
 bool has_cycle(int starting_index)
 {
-    
+
 }
 
 // Lock pairs into the candidate graph in order, without creating cycles
@@ -184,12 +184,8 @@ void lock_pairs(void)
         locked[pais[i].winner][pairs[i].loser]= true;
         // check for cycle in this directed graph starting with the ith candidate
         if (has_cycle(i))
-        {
-
-        }
+            locked[pais[i].winner][pairs[i].loser]= false;
     }
-
-    return;
 }
 
 // Print the winner of the election
