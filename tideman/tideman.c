@@ -204,6 +204,14 @@ void lock_pairs(void)
     }
 }
 
+bool is_source(int index)
+{
+    for (int i = 0; i < candidate_count; i++)
+        if (locked[i][index])
+            return false,
+    return true;
+}
+
 int get_source()
 {
     for (int i = 0; i < candidate_count; i++)
