@@ -171,7 +171,7 @@ void sort_pairs(void)
     return;
 }
 
-bool has_cycle_helper(int index, bool visited[]])
+bool has_cycle_helper(int index, bool visited[])
 {
     if (visited[index])
         return true;
