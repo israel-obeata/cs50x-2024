@@ -129,7 +129,6 @@ void record_preferences(int ranks[])
             preferences[ranks[i]][ranks[j]]++; // left is prefer, each case +1.   pre[0][2] = 1   pre[0][1] = 1  pre[2][1] = 1
         }
     }
-    return;
 }
 
 // Record pairs of candidates where one is preferred over the other
@@ -148,7 +147,6 @@ void add_pairs(void)
             }
         }
     }
-    return;
 }
 
 int compare(const void *elem1, const void *elem2)
@@ -164,7 +162,6 @@ int compare(const void *elem1, const void *elem2)
 void sort_pairs(void)
 {
     qsort(pairs, pair_count, sizeof(pair), compare);
-    return;
 }
 
 bool has_cycle_helper(int index, bool visited[])
