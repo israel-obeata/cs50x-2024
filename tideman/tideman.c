@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 // Max number of candidates
 #define MAX 9
@@ -197,10 +198,10 @@ void lock_pairs(void)
     // TODO
     for (int i = 0; i < pair_count; i++)
     {
-        locked[pais[i].winner][pairs[i].loser] = true;
+        locked[pairs[i].winner][pairs[i].loser] = true;
         // check for cycle in this directed graph starting with the ith candidate
         if (has_cycle(i))
-            locked[pais[i].winner][pairs[i].loser] = false;
+            locked[pairs[i].winner][pairs[i].loser] = false;
     }
 }
 
@@ -225,5 +226,7 @@ int get_source()
 void print_winner(void)
 {
     // TODO
-    return;
+    int index=get_source();
+    if (index != -1)
+        printf("%s\n",，candidates[index]);
 }
