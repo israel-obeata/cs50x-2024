@@ -200,7 +200,7 @@ void lock_pairs(void)
     {
         locked[pairs[i].winner][pairs[i].loser] = true;
         // check for cycle in this directed graph starting with the ith candidate
-        if (has_cycle(i))
+        if (has_cycle(pairs[i].winner))
             locked[pairs[i].winner][pairs[i].loser] = false;
     }
 }
