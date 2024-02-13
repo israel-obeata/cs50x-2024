@@ -14,6 +14,7 @@ int main(void)
     int *p = &n;
     printf("%p\n", p);
     printf("%i\n", *p);
+    printf("%i\n", &n);
 
     string s1 = "Hi!";
     printf("%s\n", s1);
