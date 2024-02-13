@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
-void draw(int n);
+// void draw(int n);
 
 int main(void)
 {
@@ -11,8 +11,11 @@ int main(void)
     // printf("%c,%c,%c,%c|\n", str[0], str[1], str[2], str[3]);
     // printf("%i,%i,%i,%i|\n", str[0], str[1], str[2], str[3]);
 
-    int height = get_int("Height: ");
-    draw(height);
+    // int height = get_int("Height: ");
+    // draw(height);
+
+    char *s = "Hi!";
+    printf("%s\n", s);
 }
 
 void draw(int n)
@@ -22,7 +25,7 @@ void draw(int n)
 
     draw(n - 1);
 
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         printf("#");
     }
