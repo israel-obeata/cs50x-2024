@@ -11,8 +11,8 @@ int main(void)
     // draw(height);
 
     int n = 50;
-    int *p = &n;
-    printf("%p\n", &n); // into the address
+    int *p = &n; // *p: Go inside the address    &n： 
+    printf("%p\n", &n);
     printf("%p\n", p);
 
     printf("%i\n", *p);
