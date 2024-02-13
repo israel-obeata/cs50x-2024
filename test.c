@@ -26,9 +26,10 @@ int main(void)
 
     //
     char *s = "Hi!";
-    printf("%c\n", *s); // *s: Go inside the address, view the value.
-    printf("%c\n", *(s + 1));
-    printf("%c\n", *(s + 2));
+    // *s: Go inside the address, view the value.
+    printf("%c\n", *s); // *s = s[0]
+    printf("%c\n", *(s + 1)); // *(s + 1) = s[1]
+    printf("%c\n", *(s + 2)); // *(s + 2) = s[2]
 }
 
 
