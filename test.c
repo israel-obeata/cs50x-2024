@@ -15,12 +15,12 @@ int main(void)
     printf("%p\n", &n);
     printf("%p\n", p);
 
-    printf("%i\n", *p);
+    printf("%i\n", *p); // *p: Go inside the address.
 
-    string s1 = "Hi!";
+    string s1 = "Hi!"; // s is the address of the first char in the string
     printf("%s\n", s1);
 
-    char *s2 = "Hi!";
+    char *s2 = "Hi!"; // string = char *
     printf("%s\n", s2);
 
 }
