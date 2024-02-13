@@ -14,7 +14,6 @@ int main(void)
     int *p = &n; // *p: Go inside the address.    &n: The address where the value of the variable n is stored.
     printf("%p\n", &n);
     printf("%p\n", p);
-
     printf("%i\n", *p); // *p: Go inside the address, view the value.
 
     //
@@ -26,6 +25,7 @@ int main(void)
 
     //
     char *s = "Hi!";
+    printf("%p\n", s);
     // *s: Go inside the address, view the value.
     printf("%c\n", *s); // *s = s[0]
     printf("%c\n", *(s + 1)); // *(s + 1) = s[1]
