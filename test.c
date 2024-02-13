@@ -15,7 +15,7 @@ int main(void)
     printf("%p\n", &n);
     printf("%p\n", p);
 
-    printf("%i\n", *p); // *p: Go inside the address
+    printf("%i\n", *p); // *p: Go inside the address, view the value.
 
     //
     // string s1 = "Hi!"; // s is the address of the first char in the string.
@@ -26,7 +26,7 @@ int main(void)
 
     //
     char *s = "Hi!";
-    printf("%c\n", *s);
+    printf("%c\n", *s); // *s: Go inside the address, view the value.
     printf("%c\n", *(s + 1));
     printf("%c\n", *(s + 2));
 }
