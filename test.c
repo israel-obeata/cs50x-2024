@@ -21,6 +21,9 @@ int main(void)
 
     char *s2 = "Hi!";
     printf("%s\n", s2);
+
+    string s3 = &"Hi!";
+    printf("%s\n", s3);
 }
 
 
