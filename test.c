@@ -11,8 +11,9 @@ int main(void)
     // draw(height);
 
     int n = 50;
-    string *p = &n;
+    int *p = &n;
     printf("%s\n", p)
+    printf("%p\n", *p)
 
     char *s = "Hi!";
     printf("%s\n", s);
