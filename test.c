@@ -17,7 +17,7 @@ int main(void)
 
     printf("%i\n", *p); // *p: Go inside the address.
 
-    string s1 = "Hi!"; // s is the address of the first char in the string
+    string s1 = "Hi!"; // s is the address of the first char in the string.
     printf("%s\n", s1);
 
     char *s2 = "Hi!"; // string = char *
