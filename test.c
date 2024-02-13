@@ -15,19 +15,20 @@ int main(void)
     printf("%p\n", &n);
     printf("%p\n", p);
 
-    printf("%i\n", *p); // *p: Go inside the address.
+    printf("%i\n", *p); // *p: Go inside the address
 
     //
-    string s1 = "Hi!"; // s is the address of the first char in the string.
-    printf("%s\n", s1);
+    // string s1 = "Hi!"; // s is the address of the first char in the string.
+    // printf("%s\n", s1);
 
-    char *s2 = "Hi!"; // string = char *
-    printf("%s\n", s2);
+    // char *s2 = "Hi!"; // string = char *
+    // printf("%s\n", s2);
 
     //
-    char *s3 = "Hi!";
-    printf("%c\n", *s3);
-
+    char *s = "Hi!";
+    printf("%c\n", *s);
+    printf("%c\n", *(s + 1));
+    printf("%c\n", *(s + 2));
 }
 
 
