@@ -7,16 +7,37 @@
 
 int main(void)
 {
-    // string str = get_string("my: ");
-    // printf("%c,%c,%c,%c|\n", str[0], str[1], str[2], str[3]);
-    // printf("%i,%i,%i,%i|\n", str[0], str[1], str[2], str[3]);
-
     // int height = get_int("Height: ");
     // draw(height);
+
+    int n = 50;
+    string *p = &n;
+    printf("%s\n", p)
 
     char *s = "Hi!";
     printf("%s\n", s);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 void draw(int n)
 {
