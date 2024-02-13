@@ -15,8 +15,11 @@ int main(void)
     printf("%p\n", p);
     printf("%i\n", *p);
 
-    char *s = "Hi!";
-    printf("%s\n", s);
+    string s1 = "Hi!";
+    printf("%s\n", s1);
+
+    char *s2 = "Hi!";
+    printf("%s\n", s2);
 }
 
 
