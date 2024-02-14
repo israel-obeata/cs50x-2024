@@ -12,7 +12,7 @@ int main(void)
 
     int n = 50;
     int *p = &n; // *p: Go inside the address.    &n: The address of the value.
-    printf("%p\n", &n); //n is a integer, not a address, so we need add a "&"
+    printf("%p\n", &n); //n is a integer, not a address, so we need add an "&" in front of n.
     printf("%p\n", p); // p: address
     printf("%i\n", *p); // *p: Go inside the address, view the value.
 
