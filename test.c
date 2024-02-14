@@ -11,7 +11,7 @@ int main(void)
     // draw(height);
 
     int n = 50;
-    int *p = &n; // *p: Go inside the address.    &n: The address where the value of the variable n is stored.
+    int *p = &n; // *p: Go inside the address.    &n: The address of the value.
     printf("%p\n", &n);
     printf("%p\n", p); // p: address
     printf("%i\n", *p); // *p: Go inside the address, view the value.
