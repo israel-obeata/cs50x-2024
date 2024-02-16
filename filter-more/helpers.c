@@ -36,7 +36,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    return;
+    // create a copy of image;
+    RGBTRIPLE temp[height][width];
+    
 }
 
 // Detect edges
