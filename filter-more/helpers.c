@@ -49,7 +49,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
                     int targetY = j + y;
 
                     // check if neighbouring pixel is valid
-                    
+                    if (targetX < 0 || targetX > (height - 1) || targetY < 0 || targetY > (width - 1))
                 }
             }
         }
