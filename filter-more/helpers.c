@@ -50,7 +50,20 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
                     // check if neighbouring pixel is valid
                     if (targetX < 0 || targetX > (height - 1) || targetY < 0 || targetY > (width - 1))
+                        continue;
+
+                    // if valid, get image value
+                    totalRed += image[targetX][targetY].rgbtRed;
+                    totalGreen += image[targetX][targetY].rgbtGreen;
+                    totalBlue += image[targetX][targetY].rgbtBlue;
+
+                    count++;
                 }
+
+                // calculate average
+                temp[i][j].rgbtRed = round(totalRed / count);
+                temp[i][j].rgbtGreen = round(totalGreen / count);
+                temp[i][j].rgbtBlue = round(totalBlue / count);
             }
         }
     }
