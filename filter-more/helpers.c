@@ -31,6 +31,20 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - 1 - j] = temp;
         }
     }
+}
+
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+{
+    // create a copy of image;
+    RGBTRIPLE temp[height][width];
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            temp[i][j] = image[i][j];
+        }
+    }
 
     for (int i = 0; i < height; i++)
     {
@@ -67,22 +81,17 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             }
         }
     }
-}
 
-// Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width])
-{
-    // create a copy of image;
-    RGBTRIPLE temp[height][width];
+    //copy new pixels into original image
     for (int i = 0; i < height; i++)
     {
         for (int j = 0; j < width; j++)
         {
-            temp[i][j] = image[i][j];
+            temp[i][j].rgbtRed = image[i][j].rgbtRed;
+            temp[i][j].rgbtGreen = image[i][j].rgbtGreen;
+            temp[i][j].rgbtBlue = image[i][j].rgbtBlue;
         }
     }
-
-
 }
 
 // Detect edges
