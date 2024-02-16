@@ -41,10 +41,14 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             int count = 0;
 
             // get neighbouring pixels
-            for (int i = -1; i < 2; i++)
+            for (int x = -1; x < 2; x++)
             {
-                for (int j = -1; j < 2; j++)
+                for (int y = -1; y < 2; y++)
                 {
+                    int targetX = i + x;
+                    int targetY = j + y;
+
+                    // check if neighbouring pixel is valid
                     
                 }
             }
