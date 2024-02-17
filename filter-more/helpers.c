@@ -102,6 +102,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    // create a copy of the image
     RGBTRIPLE temp[height][width];
     int gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
     int gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
@@ -114,7 +115,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gxBlue, gyBlue, gxGreen, gyGreen, gxRed, gyRed;
             gxBlue = gyBlue = gxGreen = gyGreen = gxRed = gyRed = 0;
 
-            // Get the 3x3 grid around the current pixel, and calculate the gx, gy
+            // Get the 3x3 grid around the current pixel, and calculate the gx, gy of the rgb
             for (int r = -1; r < 2; r++)
             {
                 for (int c = -1; c < 2; c++)
