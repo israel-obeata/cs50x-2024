@@ -137,6 +137,20 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int green = round(sqrt(gxGreen * gxGreen + gyGreen * gyGreen));
             int blue = round(sqrt(gxBlue * gxBlue + gyBlue * gyBlue));
 
+            temp[i][j].rgbtRed = (red > 255) ? 255 : red;
+            temp[i][j].rgbtGreen = (green > 255) ? 255 : green;
+            temp[i][j].rgbtBlue = (blue > 255) ? 255 : blue;
+        }
+    }
+
+    //copy new pixels into original image
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            image[i][j].rgbtRed = temp[i][j].rgbtRed;
+            image[i][j].rgbtGreen = temp[i][j].rgbtGreen;
+            image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
         }
     }
     return;
