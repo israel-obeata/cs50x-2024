@@ -13,5 +13,6 @@ int main(int argc, char *argv[])
     if (card == NULL)
     {
         printf("Could not open file");
+        return 2;
     }
 }
