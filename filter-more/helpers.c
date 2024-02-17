@@ -36,7 +36,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // create a copy of image;
+    // create a copy of the image
     RGBTRIPLE temp[height][width];
     for (int i = 0; i < height; i++)
     {
@@ -48,11 +48,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     for (int i = 0; i < height; i++)
     {
-        for (int j = 0; j < width / 2; j++)
+        for (int j = 0; j < width; j++)
         {
             int totalRed, totalGreen, totalBlue;
             totalRed = totalGreen = totalBlue = 0;
-            float count = 0.0;
+            float count = 0.00;
 
             // get neighbouring pixels
             for (int x = -1; x < 2; x++)
