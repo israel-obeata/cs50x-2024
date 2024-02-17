@@ -17,6 +17,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtRed = image[i][j].rgbtGreen = image[i][j].rgbtBlue = average;
         }
     }
+    return;
 }
 
 // Reflect image horizontally
@@ -31,6 +32,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             image[i][width - 1 - j] = temp;
         }
     }
+    return;
 }
 
 // Blur image
@@ -94,10 +96,28 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             image[i][j].rgbtBlue = temp[i][j].rgbtBlue;
         }
     }
+    return;
 }
 
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    RGBTRIPLE temp[height][width];
+    int gx[3][3] = {{-1, 0, 1}, {-2, 0, 2}, {-1, 0, 1}};
+    int gy[3][3] = {{-1, -2, -1}, {0, 0, 0}, {1, 2, 1}};
+
+    for (int i = 0; i < height; i++)
+    {
+        for (int j = 0; j < width; j++)
+        {
+            int gxBlue = 0;
+            int gyBlue = 0;
+            int gxGreen = 0;
+            int gyGreen = 0;
+            int gxRed = 0;
+            int gyRed = 0;
+
+        }
+    }
     return;
 }
