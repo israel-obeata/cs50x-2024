@@ -114,14 +114,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gxBlue, gyBlue, gxGreen, gyGreen, gxRed, gyRed;
             gxBlue = gyBlue = gxGreen = gyGreen = gxRed = gyRed = 0;
 
-            // Get the 3x3 grid around the current pixel
+            // Get the 3x3 grid around the current pixel, and calculate the gx, gy
             for (int r = -1; r < 2; r++)
             {
                 for (int c = -1; c < 2; c++)
                 {
                     if (i + r < 0 || i + r > height - 1 || j + c < 0 || j + c > width - 1)
                         continue;
-                    
+
                     gxBlue += image[i + r][j + c].rgbtBlue * gx[r + 1][c + 1];
                     gyBlue += image[i + r][j + c].rgbtBlue * gy[r + 1][c + 1];
                     gxGreen += image[i + r][j + c].rgbtGreen * gx[r + 1][c + 1];
@@ -130,6 +130,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     gyRed += image[i + r][j + c].rgbtRed * gy[r + 1][c + 1];
                 }
             }
+
+            // 
 
         }
     }
