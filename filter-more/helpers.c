@@ -114,7 +114,16 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int gxBlue, gyBlue, gxGreen, gyGreen, gxRed, gyRed;
             gxBlue = gyBlue = gxGreen = gyGreen = gxRed = gyRed = 0;
 
-            //
+            // Get the 3x3 grid around the current pixel
+            for (int r = -1; r < 2; r++)
+            {
+                for (int c = -1; c < 2; c++)
+                {
+                    if (i + r < 0 || i + r > height - 1 || j + c < 0 || j + c > width - 1)
+                        continue;
+                    
+                }
+            }
 
         }
     }
