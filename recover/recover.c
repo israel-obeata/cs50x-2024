@@ -9,9 +9,9 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *input_file = fopen(argv[1], "r");
-    if (input_file == NULL)
+    FILE *card = fopen(argv[1], "r");
+    if (card == NULL)
     {
-        printf("Could not open file")
+        printf("Could not open file");
     }
 }
