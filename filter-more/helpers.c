@@ -112,8 +112,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int j = 0; j < width; j++)
         {
-            int gxBlue, gyBlue, gxGreen, gyGreen, gxRed, gyRed;
-            gxBlue = gyBlue = gxGreen = gyGreen = gxRed = gyRed = 0;
+            int gxRed, gyRed, gxGreen, gyGreen, gxBlue, gyBlue;
+            gxRed = gyRed = gxGreen = gyGreen = gxBlue = gyBlue = 0;
 
             // Get the 3x3 grid around the current pixel, and calculate the gx, gy of the rgb
             for (int r = -1; r < 2; r++)
