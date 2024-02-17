@@ -21,8 +21,10 @@ int main(int argc, char *argv[])
     // Create a buffer for a block of data
     uint8_t buffer[512];
 
+    // Track number of imagesgenerated
     int count_image = 0;
 
+    // File pointer for recovered images
     FILE *output_file = NULL;
 
     // While there's still data left to read from the memory card
