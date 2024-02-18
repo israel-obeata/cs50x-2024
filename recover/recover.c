@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     FILE *outptr = NULL;
 
     // create an array of 512 elements to store 512 bytes from the memory card
-    uint8_t buffer[512];
+    BYTE buffer[512];
 
     // count amount of jpeg files found
     int jpeg = 0;
