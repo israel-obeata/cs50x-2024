@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+typedef uint_8 BYTE;
+
 int main(int argc, char *argv[])
 {
     // Accept a single command-line argument
