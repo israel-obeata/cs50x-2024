@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef uint8_t BYTE;
+//typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     FILE *outptr = NULL;
 
     // create an array of 512 elements to store 512 bytes from the memory card
-    BYTE buffer[512];
+    uint8_t buffer[512];
 
     // count amount of jpeg files found
     int jpeg = 0;
@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     char filename[8] = {0};
 
     // read memory card untill the end of file
-    while (fread(buffer, sizeof(BYTE) * 512, 1, inptr) == 1)
+    while (fread(buffer, sizeof(uint8_t) * 512, 1, inptr) == 1)
     {
         // check if jpeg is found
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
         // keep writing to jpeg file if new jpeg is not found
         if (outptr != NULL)
         {
-            fwrite(buffer, sizeof(BYTE) * 512, 1, outptr);
+            fwrite(buffer, sizeof(uint8_t) * 512, 1, outptr);
         }
     }
 
