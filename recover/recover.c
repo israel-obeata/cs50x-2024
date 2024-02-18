@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+typedef uint_8 BYTE;
+
 int main(int argc, char *argv[])
 {
     // Accept a single command-line argument
@@ -20,7 +22,7 @@ int main(int argc, char *argv[])
     }
 
     // Create a buffer for a block of data
-    uint8_t buffer[512];
+    BYTE buffer[512];
 
     // Track number of imagesgenerated
     int count_image = 0;
@@ -35,7 +37,7 @@ int main(int argc, char *argv[])
 
 
     // While there's still data left to read from the memory card
-    while (fread(buffer, 1, 512, card) == 512)
+    while (fread(buffer, sizeof(BYTE), 512, card) == 512)
     {
         // Check if bytes indicate start of JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
