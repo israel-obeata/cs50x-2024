@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
             {
                 fclose(outptr);
             }
-            //Formats a new filename filename with a zero-padded three-digit number (e.g., 000.jpg, 001.jpg) based on the jpeg count.
+            // Formats a new filename with a zero-padded three-digit number (e.g., 000.jpg, 001.jpg) based on the jpeg count.
             sprintf(filename, "%03d.jpg", jpeg++);
 
             // open a new outptr for writing a new found jpeg
