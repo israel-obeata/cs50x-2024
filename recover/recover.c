@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
         // check if jpeg is found
         if (buffer[0] == 0xFF && buffer[1] == 0xD8 && buffer[2] == 0xFF && (buffer[3] & 0xF0) == 0xE0)
         {
-            // close outptr if jpeg was found before and written into ###.jpg
+            // If outptr is not NULL (a JPEG was being written), closes the previous output file.
             if (outptr != NULL)
             {
                 fclose(outptr);
