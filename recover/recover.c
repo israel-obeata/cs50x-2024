@@ -42,6 +42,12 @@ int main(int argc, char *argv[])
         {
             // Write the JPEG filenames
             sprintf(filename, "%03i.jpg", count_image);
+
+            // Open output file for writing
+            output_file = fopen(filename,"w");
+
+            // Count number of images found
+            count_image++;
         }
         // Create JPEGs from the data
 
