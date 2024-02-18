@@ -2,61 +2,69 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-typedef uint_8 BYTE;
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
-    // Accept a single command-line argument
-    if (argc != 2)
+    //ensure proper usage
+    if(argc!=2)
     {
-        printf("Usage: ./recover IMAGE\n");
+        fprintf(stderr, "Usage: ./recover infile\n");
         return 1;
     }
 
-    // Open the memory card
-    FILE *input_file = fopen(argv[1], "r");
-    if (input_file == NULL)
+    // open input file (forensic image)
+    FILE*inptr=fopen(argv[1], "r");
+    if(inptr==NULL)
     {
-        printf("Could not open file");
+        fprintf(stderr, "Could not open %s.\n", argv[1]);
         return 2;
     }
 
-    // Create a buffer for a block of data
-    unsigned char buffer[512];
+    //set outfile pointer to NULL
+    FILE* outptr = NULL;
 
-    // Track number of imagesgenerated
-    int count_image = 0;
+   //create an array of 512 elements to store 512 bytes from the memory card
+    BYTE buffer[512];
 
-    // File pointer for recovered images
-    FILE *output_file = NULL;
+    //count amount of jpeg files found
+    int jpeg=0;
 
-    // char filename[8]
-    char *filename = malloc(8 * sizeof(char));
+    //string to hold a filename
+    char filename[8]={0};
 
-    // Read the blocks of 512 bytes
-    while (fread(buffer, sizeof(char), 512, input_file))
+    //read memory card untill the end of file
+    while(fread(buffer, sizeof(BYTE)*512, 1, inptr)==1)
     {
-        // Check if bytes indicate start of JPEG
-        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        //check if jpeg is found
+        if(buffer[0]==0xFF&&buffer[1]==0xD8&&buffer[2]==0xFF&&(buffer[3]&0xF0)==0xE0)
         {
-            // Write the JPEG filenames
-            sprintf(filename, "%03i.jpg", count_image);
+            //close outptr if jpeg was found before and written into ###.jpg
+            if(outptr != NULL)
+            {
+                fclose(outptr);
+            }
+                sprintf(filename, "%03d.jpg", jpeg++);
 
-            // Open output file for writing
-            output_file = fopen(filename,"w");
+                //open a new outptr for writing a new found jpeg
+                outptr = fopen(filename, "w");
+        }
 
-            // Count number of images found
-            count_image++;
-        }
-        // Check if output has been used for valid input
-        if (output_file != NULL)
-        {
-            fwrite(buffer, sizeof(char), 512, output_file);
-        }
+       //keep writing to jpeg file if new jpeg is not found
+       if(outptr != NULL)
+       {
+            fwrite(buffer, sizeof(BYTE)*512, 1, outptr);
+       }
     }
-    free(filename);
-    fclose(output_file);
-    fclose(input_file);
+
+    // close last opened outptr
+     if (outptr != NULL)
+     {
+      fclose(outptr);
+     }
+
+    //close input file (forensic image)
+      fclose(inptr);
 
     return 0;
 }
