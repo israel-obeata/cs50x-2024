@@ -12,8 +12,8 @@ int main(int argc, char *argv[])
     }
 
     // Open the memory card
-    FILE *card = fopen(argv[1], "r");
-    if (card == NULL)
+    FILE *input_file = fopen(argv[1], "r");
+    if (input_file == NULL)
     {
         printf("Could not open file");
         return 2;
@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
 
     // While there's still data left to read from the memory card
-    while (fread(buffer, 1, 512, card) == 512)
+    while (fread(buffer, 1, 512, input_file) == 512)
     {
         // Check if bytes indicate start of JPEG
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
@@ -49,8 +49,15 @@ int main(int argc, char *argv[])
             // Count number of images found
             count_image++;
         }
-        
-        // Create JPEGs from the data
-
+        // Check if output has been used for valid input
+        if (output_file != NULL)
+        {
+            fwrite(buffer, sizeof(char), 512, output_file);
+        }
     }
+    free(filename);
+    fclose(output_file);
+    fclose(input_file);
+
+    return 0;
 }
