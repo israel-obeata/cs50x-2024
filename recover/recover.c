@@ -28,8 +28,10 @@ int main(int argc, char *argv[])
     // File pointer for recovered images
     FILE *output_file = NULL;
 
-    
+    // char filename[8]
     char *filename = malloc(8 * sizeof(char));
+
+    
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
