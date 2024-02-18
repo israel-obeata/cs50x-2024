@@ -49,6 +49,7 @@ int main(int argc, char *argv[])
             // Count number of images found
             count_image++;
         }
+        
         // Create JPEGs from the data
 
     }
