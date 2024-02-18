@@ -32,11 +32,16 @@ int main(int argc, char *argv[])
     char *filename = malloc(8 * sizeof(char));
 
     // Read the blocks of 512 bytes
-    
+
 
     // While there's still data left to read from the memory card
     while (fread(buffer, 1, 512, card) == 512)
     {
+        // Check if bytes indicate start of JPEG
+        if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
+        {
+
+        }
         // Create JPEGs from the data
 
     }
