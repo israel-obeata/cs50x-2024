@@ -43,7 +43,7 @@ person *create_family(int generations)
     if (new_person == NULL)
     {
         printf("We had an error allocating memory for new person!\n")
-        return 1;
+        return NULL;
     }
 
     // If there are still generations left to create
