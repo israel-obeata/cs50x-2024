@@ -42,7 +42,7 @@ person *create_family(int generations)
     person *new_person = malloc(sizeof(person));
     if (new_person == NULL)
     {
-        printf("We had an error allocating memory for new person!\n")
+        printf("We had an error allocating memory for new person!\n");
         return NULL;
     }
 
@@ -88,8 +88,8 @@ void free_family(person *p)
     }
 
     // TODO: Free parents recursively
-    free_family(p->parent[0]);
-    free_family(p->parent[0]);
+    free_family(p->parents[0]);
+    free_family(p->parents[0]);
 
     // TODO: Free child
     free(p);
