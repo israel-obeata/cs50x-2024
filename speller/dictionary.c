@@ -61,14 +61,16 @@ bool load(const char *dictionary)
         }
         // Copy word into node
         strcpy(n->word, word);
+        
         // Calculates index of word for insertion into hashtable
         int hash_value = hash(n->word);
+        // Add each word to the hash table
         n->next = table[hash_value];
         table[hash_value] = n;
         word_count++;
     }
 
-        // Add each word to the hash table
+
 
     // Close the dictionary file
     fclose(source);
