@@ -48,7 +48,7 @@ bool load(const char *dictionary)
 
     // Declare an array for hash
     char word[LENGTH + 1];
-    
+
     // Scan dictionary for strings up until EOF
     while (fscanf(source, %s, word) != EOF)
     {
@@ -62,7 +62,8 @@ bool load(const char *dictionary)
         // Copy word into node
         strcpy(n->word, word);
         // Calculates index of word for insertion into hashtable
-        int index = hash(n->word);
+        int hash_value = hash(n->word);
+        n->next = table[hash_value];
     }
 
         // Add each word to the hash table
