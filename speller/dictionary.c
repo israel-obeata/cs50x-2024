@@ -49,7 +49,7 @@ bool load(const char *dictionary)
 
     // Close the dictionary file
     fclose(source);
-    return false;
+    return true;
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
