@@ -16,6 +16,10 @@ typedef struct node
 // TODO: Choose number of buckets in hash table
 const unsigned int N = 26;
 
+// Declare variables
+unsigned int hash_value;
+unsigned int word_count;
+
 // Hash table
 node *table[N];
 
@@ -61,9 +65,9 @@ bool load(const char *dictionary)
         }
         // Copy word into node
         strcpy(n->word, word);
-        
+
         // Calculates index of word for insertion into hashtable
-        int hash_value = hash(n->word);
+        hash_value = hash(n->word);
         // Add each word to the hash table
         n->next = table[hash_value];
         table[hash_value] = n;
