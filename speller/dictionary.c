@@ -34,9 +34,14 @@ bool check(const char *word)
     // Point cursor to the first node
     node *cursor = table[hash_value];
 
+    // Go through linked list
     while (cursor != NULL)
     {
-
+        if (strcasecmp(word, cursor->word) == 0)
+        {
+            return true;
+        }
+        cursor = cursor->next;
     }
 
     return false;
