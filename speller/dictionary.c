@@ -55,6 +55,8 @@ bool load(const char *dictionary)
         }
         // Copies word into node if malloc succeeds
         strcpy(n->word, word);
+        // Calculates index of word for insertion into hashtable
+        int index = hash(n->word);
     }
 
         // Add each word to the hash table
