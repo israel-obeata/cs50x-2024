@@ -77,7 +77,7 @@ bool load(const char *dictionary)
     char word[LENGTH + 1];
 
     // Scan dictionary for strings up until EOF
-    while (fscanf(source, %s, word) != EOF)
+    while (fscanf(source, "%s", word) != EOF)
     {
         // Allocate memory for new node
         node *n = malloc(sizeof(node));
