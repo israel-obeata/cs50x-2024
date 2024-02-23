@@ -46,6 +46,11 @@ bool load(const char *dictionary)
     // Read each word in the file
     char word[LENGTH + 1];
 
+    while (fscanf(source, %s, word) != EOF)
+    {
+        
+    }
+
         // Add each word to the hash table
 
     // Close the dictionary file
