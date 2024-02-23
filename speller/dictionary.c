@@ -46,9 +46,10 @@ bool load(const char *dictionary)
 
     // Read each word in the file
 
-    // Declare an array
+    // Declare an array for hash
     char word[LENGTH + 1];
-
+    
+    // Scan dictionary for strings up until EOF
     while (fscanf(source, %s, word) != EOF)
     {
         // Allocate memory for new node
