@@ -64,6 +64,8 @@ bool load(const char *dictionary)
         // Calculates index of word for insertion into hashtable
         int hash_value = hash(n->word);
         n->next = table[hash_value];
+        table[hash_value] = n;
+        word_count++;
     }
 
         // Add each word to the hash table
