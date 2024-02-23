@@ -28,6 +28,17 @@ node *table[N];
 bool check(const char *word)
 {
     // TODO
+    // Hash the word to obtain the hash value
+    hash_value = hash(word);
+
+    // Point cursor to the first node
+    node *cursor = table[hash_value];
+
+    while (cursor != NULL)
+    {
+
+    }
+
     return false;
 }
 
