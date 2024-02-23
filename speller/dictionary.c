@@ -83,6 +83,7 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
+            unload();
             printf("Memory Error!\n");
             return false;
         }
