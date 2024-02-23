@@ -1,6 +1,7 @@
 {
     "gitdoc.enabled": true,
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "ctype.h": "c"
     }
 }
