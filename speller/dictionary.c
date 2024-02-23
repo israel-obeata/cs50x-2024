@@ -40,6 +40,7 @@ bool load(const char *dictionary)
     FILE *source = fopen(dictionary, "r");
     if (source == NULL)
     {
+        printf("Unable open to %s\n", dictionary);
         return false;
     }
 
