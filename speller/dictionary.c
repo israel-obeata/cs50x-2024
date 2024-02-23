@@ -45,6 +45,8 @@ bool load(const char *dictionary)
     }
 
     // Read each word in the file
+
+    // Declare an array
     char word[LENGTH + 1];
 
     while (fscanf(source, %s, word) != EOF)
@@ -53,9 +55,10 @@ bool load(const char *dictionary)
         node *n = malloc(sizeof(node));
         if (n == NULL)
         {
+            printf("Memory Error!\n");
             return false;
         }
-        // Copies word into node if malloc succeeds
+        // Copy word into node
         strcpy(n->word, word);
         // Calculates index of word for insertion into hashtable
         int index = hash(n->word);
