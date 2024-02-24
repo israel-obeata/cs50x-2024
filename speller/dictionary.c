@@ -128,7 +128,9 @@ bool unload(void)
         {
             // Create temp
             node *temp = cursor;
+            // Move cursor to next node
             cursor = cursor->next;
+            // Free up temp;
             free(temp);
         }
     }
