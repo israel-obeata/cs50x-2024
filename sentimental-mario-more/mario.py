@@ -6,4 +6,5 @@ while True:
         break
 
 for i in range(h):
-    print("#" * (i + 1), "#" * (i + 1))
+    s = "#" * (i + 1)
+    print(f"{s}  {s}")
