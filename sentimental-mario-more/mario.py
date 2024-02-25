@@ -5,8 +5,7 @@ while True:
     if h > 0:
         break
 
-
-
 for i in range(h):
     for j in range(i + 1):
-        print("#")
+        print("#", end = "")
+    print()
