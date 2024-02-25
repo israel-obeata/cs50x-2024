@@ -7,4 +7,4 @@ while True:
 
 for i in range(h):
     s = "#" * (i + 1)
-    print(f"{s}  {s}")
+    print(f"{" " * (h - i)}{s}  {s}")
