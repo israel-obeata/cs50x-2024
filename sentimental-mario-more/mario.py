@@ -4,6 +4,8 @@ while True:
     h = get_int("Height: ")
     if h > 0 or h < 9:
         break
+    else:
+        pass
 
 for i in range(h):
     blank = " " * (h -1 - i)
