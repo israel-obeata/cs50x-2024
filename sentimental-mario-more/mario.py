@@ -6,5 +6,6 @@ while True:
         break
 
 for i in range(h):
+    blank = " " * (h - i)
     s = "#" * (i + 1)
-    print(f"{" " * (h - i)}{s}  {s}")
+    print(f"{blank}{s}  {s}")
