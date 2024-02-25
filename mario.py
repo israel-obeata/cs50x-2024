@@ -6,5 +6,7 @@ while True:
         break
 
 
-def main(h):
-    for i in range(h)
+
+for i in range(h):
+    for j in range(i + 1):
+        print("#")
