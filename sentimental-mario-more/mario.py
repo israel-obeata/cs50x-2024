@@ -1,12 +1,8 @@
 from cs50 import get_int
 
-while True:
-    try:
-        h = get_int("Height: ")
-        if h > 0 or h < 9:
-            break
-    except:
-
+h = 0
+while h < 1 or h > 8:
+    h = get_int("Height: ")
 
 for i in range(h):
     blank = " " * (h -1 - i)
