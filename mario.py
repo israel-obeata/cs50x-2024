@@ -2,7 +2,9 @@ from cs50 import get_int
 
 while True:
     try:
-        h = int(get_int("Height: "))
+        h = get_int("Height: ")
+        if h > 0:
+            break
     except ValueError:
         pass
 
