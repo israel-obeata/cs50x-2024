@@ -23,6 +23,9 @@ def check_sum(n):
         else:
             sum += int(c) * 2
 
+    if sum % 10 == 0:
+        return True
+    return False
 
 def print_brand(n):
 
