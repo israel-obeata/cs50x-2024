@@ -11,10 +11,11 @@ def check_valid(n):
     length = len(n)
     if (length == 13 or length == 15 or len == 16) and check_sum(n):
         return True
+    print("INVALID")
     return False
 
 def check_sum(n):
     if
 
 def print_brand(n):
-    
+
