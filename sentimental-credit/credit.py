@@ -29,6 +29,8 @@ def check_sum(n):
     return False
 
 def print_brand(n):
-    if length = 15 and n[0] == '3' and (n[1] == '4' or n[1] == '7'):
-        print("")
+    if length = 15 and n[:2] in ["34", "37"]:
+        print("AMEX")
+    elif length = 16 and n[:2] in ["51", "52", "53", "54", "55"]:
+        
 
