@@ -16,9 +16,12 @@ def check_valid(n):
     return False
 
 def check_sum(n):
-    total = 0
-    for i in range(len(n) - 1, -1, 2):
-        total += n[i] * 2
+    sum_1 = 0
+    sum_2
+    for i in range(len(n) - 1, -1):
+        if i
+        sum_1 += n[i] * 2
+        sum
 
 def print_brand(n):
 
