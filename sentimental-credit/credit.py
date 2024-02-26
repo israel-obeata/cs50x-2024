@@ -1,8 +1,8 @@
-from cs50 import get_int
+from cs50 import get_string
 
 
 def main():
-    num = input("Number: ")
+    num = get_string("Number: ")
     if check_valid(num):
         print_brand(num)
     else:
