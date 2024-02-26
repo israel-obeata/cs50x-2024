@@ -16,12 +16,13 @@ def check_valid(n):
     return False
 
 def check_sum(n):
-    sum_1 = 0
-    sum_2
+    sum = 0
     for i, c in enumerate(reversed(n)):
-        if i
-        sum_1 += n[i] * 2
-        sum
+        if i % 2 == 0:
+            sum += int(c)
+        else:
+            sum += int(c) * 2
+
 
 def print_brand(n):
 
