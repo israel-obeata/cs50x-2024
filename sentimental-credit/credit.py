@@ -10,13 +10,15 @@ def main():
 
 
 def check_valid(n):
-    length = len(n)
-    if (length == 13 or length == 15 or len == 16) and check_sum(n):
+    # length = len(n)
+    if (length == 13 or length == 15 or length == 16) and check_sum(n):
         return True
     return False
 
 def check_sum(n):
-    if
+    total = 0
+    for i in range(len(n)):
+        total += n[]
 
 def print_brand(n):
 
