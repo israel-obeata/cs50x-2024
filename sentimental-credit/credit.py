@@ -1,5 +1,6 @@
 from cs50 import get_string
 
+length = 0
 
 def main():
     num = get_string("Number: ")
@@ -10,7 +11,7 @@ def main():
 
 
 def check_valid(n):
-    # length = len(n)
+    length = len(n)
     if (length == 13 or length == 15 or length == 16) and check_sum(n):
         return True
     return False
@@ -28,4 +29,6 @@ def check_sum(n):
     return False
 
 def print_brand(n):
+    if length = 15 and n[0] == '3' and (n[1] == '4' or n[1] == '7'):
+        print("")
 
