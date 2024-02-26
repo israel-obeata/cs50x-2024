@@ -18,7 +18,7 @@ def check_valid(n):
 def check_sum(n):
     sum_1 = 0
     sum_2
-    for i in range(len(n) - 1, -1):
+    for i, c in enumerate(reversed(n)):
         if i
         sum_1 += n[i] * 2
         sum
