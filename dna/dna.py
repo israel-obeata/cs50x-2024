@@ -38,11 +38,12 @@ def main():
 
         for STR in STRs:
             print(f"profile[STR]: {profile[STR]} - target[STR]: {target[STR]}")
+            print(f"profile[STR]: {type(profile[STR])} - target[STR]: {type(target[STR])}")
             if profile[STR] != target[STR]:
                 break
             match_count += 1
         print(f"match_count: {match_count}")
-        
+
         if match_count == len(STRs):
             print(profile["name"])
             exit(0)
