@@ -31,12 +31,21 @@ def main():
         target[STR] = longest_match(seq, STR)
 
     # TODO: Check database for matching profiles
+    match_count = 0
+
     for profile in profiles:
+
         for STR in STRs:
             if profile[STR] != target[STR]:
-                continue
+                break
+            match_count += 1
 
-    return
+        if match_count == len(STRs):
+            print(profile["name"])
+            exit(0)
+
+    print("No match")
+    exit(2)
 
 
 def longest_match(sequence, subsequence):
