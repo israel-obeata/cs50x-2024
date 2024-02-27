@@ -1,5 +1,5 @@
 import csv
-import sys
+from sys import argv, exit
 
 
 def main():
@@ -10,6 +10,10 @@ def main():
         exit(1)
 
     # TODO: Read database file into a variable
+    with open(argv[1]) as file:
+        reader = csv.DictReader(file)
+        
+
 
     # TODO: Read DNA sequence file into a variable
 
