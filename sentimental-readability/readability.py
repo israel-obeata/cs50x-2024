@@ -8,8 +8,8 @@ def main():
 
 
 def calculate(s):
-    letters = sentences = words = 0, 1, 0
-
+    letters = sentences = 0
+    words = 1
     for i in range(len(s)):
         if s[i].isalpha():
             letters += 1
