@@ -31,10 +31,9 @@ def main():
         target[STR] = longest_match(seq, STR)
 
     # TODO: Check database for matching profiles
-    match_count = 0
-
     for profile in profiles:
-
+        match_count = 0
+        
         for STR in STRs:
             if profile[STR] != target[STR]:
                 break
