@@ -23,7 +23,6 @@ def check_sum(n):
             for j in str(int(c) * 2):
                 sum += int(j)
 
-    print(f"sum: {sum}")
     if sum % 10 == 0:
         return True
     return False
