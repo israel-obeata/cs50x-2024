@@ -11,7 +11,6 @@ def main():
 
 def check_valid(n):
     if len(n) in [13, 15, 16] and check_sum(n):
-        print("valid")
         return True
     return False
 
@@ -19,12 +18,11 @@ def check_sum(n):
     sum = 0
     for i, c in enumerate(reversed(n)):
         if i % 2 == 0:
-            # print(f"c: {c}")
             sum += int(c)
         else:
-            print(f"c: {c}")
-            sum += int(c) * 2
-            
+            for j in str(int(c) * 2):
+                sum += int(j)
+
     print(f"sum: {sum}")
     if sum % 10 == 0:
         return True
