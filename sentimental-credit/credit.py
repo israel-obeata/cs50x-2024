@@ -19,6 +19,7 @@ def check_sum(n):
     sum = 0
     for i, c in enumerate(reversed(n)):
         if i % 2 == 0:
+            print(f"c: {c}")
             sum += int(c)
         else:
             sum += int(c) * 2
