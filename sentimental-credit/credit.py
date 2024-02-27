@@ -14,6 +14,7 @@ def check_valid(n):
         return True
     return False
 
+
 def check_sum(n):
     sum = 0
     for i, c in enumerate(reversed(n)):
@@ -26,6 +27,7 @@ def check_sum(n):
     if sum % 10 == 0:
         return True
     return False
+
 
 def print_brand(n):
     if len(n) == 15 and n[:2] in ["34", "37"]:
