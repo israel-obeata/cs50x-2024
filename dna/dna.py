@@ -24,7 +24,7 @@ def main():
         seq = seq_file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
-    target = dict()
+    target = {}
     for STR in STRs:
         target[STR] = str(longest_match(seq, STR))
 
