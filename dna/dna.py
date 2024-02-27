@@ -14,7 +14,6 @@ def main():
     STRs = []
     with open(argv[1]) as csv_file:
         reader = csv.DictReader(csv_file)
-        STRs =
         for row in reader:
             rows.append(row)
 
