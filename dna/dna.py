@@ -26,12 +26,13 @@ def main():
 
 
     # TODO: Find longest match of each STR in DNA sequence
-    
+    target = []
     for STR in STRs:
-        longest_match(seq, STR)
-
+        target.append(longest_match(seq, STR))
 
     # TODO: Check database for matching profiles
+    for profile in profiles:
+        if 
 
     return
 
