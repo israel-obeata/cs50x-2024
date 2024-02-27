@@ -34,6 +34,8 @@ def print_brand(n):
         print("MASTERCARD")
     elif (len(n) == 13 or len(n) == 16) and n[0] == '4':
         print("VISA")
+    else:
+        print("INVALID")
 
 
 main()
