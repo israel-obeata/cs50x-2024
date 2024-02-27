@@ -9,6 +9,7 @@ def main():
         print("Usage: python dna.py database.csv sequences.txt")
         exit(1)
 
+
     # TODO: Read database file into a variable
     STRs = []
     profiles = []
@@ -18,8 +19,7 @@ def main():
         STRs = reader.fieldnames[1:]
         for row in reader:
             profiles.append(row)
-    print(f"profiles:\n{profiles}")
-    print()
+
 
     # TODO: Read DNA sequence file into a variable
     with open(argv[2]) as seq_file:
@@ -29,20 +29,17 @@ def main():
     # TODO: Find longest match of each STR in DNA sequence
     target = dict()
     for STR in STRs:
-        target[STR] = longest_match(seq, STR)
-    print(f"target: {target}")
+        target[STR] = str(longest_match(seq, STR))
+
 
     # TODO: Check database for matching profiles
     for profile in profiles:
         match_count = 0
 
         for STR in STRs:
-            print(f"profile[STR]: {profile[STR]} - target[STR]: {target[STR]}")
-            print(f"profile[STR]: {type(profile[STR])} - target[STR]: {type(target[STR])}")
             if profile[STR] != target[STR]:
                 break
             match_count += 1
-        print(f"match_count: {match_count}")
 
         if match_count == len(STRs):
             print(profile["name"])
