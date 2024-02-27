@@ -37,7 +37,7 @@ def main():
         match_count = 0
 
         for STR in STRs:
-            print(f"STR: {profile[STR]}")
+            print(f"profile[STR]: {profile[STR]} - target[STR]: {target[STR]}")
             if profile[STR] != target[STR]:
                 break
             match_count += 1
