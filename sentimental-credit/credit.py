@@ -1,6 +1,5 @@
 from cs50 import get_string
 
-length = 0
 
 def main():
     num = get_string("Number: ")
@@ -11,8 +10,7 @@ def main():
 
 
 def check_valid(n):
-    length = len(n)
-    if (length == 13 or length == 15 or length == 16) and check_sum(n):
+    if (len(n) == 13 or len(n) == 15 or len(n) == 16) and check_sum(n):
         return True
     return False
 
@@ -29,11 +27,11 @@ def check_sum(n):
     return False
 
 def print_brand(n):
-    if length == 15 and n[:2] in ["34", "37"]:
+    if len(n) == 15 and n[:2] in ["34", "37"]:
         print("AMEX")
-    elif length == 16 and n[:2] in ["51", "52", "53", "54", "55"]:
+    elif len(n) == 16 and n[:2] in ["51", "52", "53", "54", "55"]:
         print("MASTERCARD")
-    elif (length == 13 or length == 16) and n[0] == '4':
+    elif (len(n) == 13 or len(n) == 16) and n[0] == '4':
         print("VISA")
 
 
