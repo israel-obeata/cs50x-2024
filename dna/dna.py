@@ -18,7 +18,7 @@ def main():
         STRs = reader.fieldnames[1:]
         for row in reader:
             profiles.append(row)
-    print(profiles)
+    print(f"profiles:\n{profiles}")
     print()
 
     # TODO: Read DNA sequence file into a variable
@@ -30,13 +30,14 @@ def main():
     target = dict()
     for STR in STRs:
         target[STR] = longest_match(seq, STR)
-    print(target)
+    print(f"target: {target}")
 
     # TODO: Check database for matching profiles
     for profile in profiles:
         match_count = 0
 
         for STR in STRs:
+            print(f"STR: {profile[STR]}")
             if profile[STR] != target[STR]:
                 break
             match_count += 1
