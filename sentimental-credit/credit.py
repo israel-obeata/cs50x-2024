@@ -19,10 +19,12 @@ def check_sum(n):
     sum = 0
     for i, c in enumerate(reversed(n)):
         if i % 2 == 0:
-            print(f"c: {c}")
+            # print(f"c: {c}")
             sum += int(c)
         else:
+            print(f"c: {c}")
             sum += int(c) * 2
+            
     print(f"sum: {sum}")
     if sum % 10 == 0:
         return True
