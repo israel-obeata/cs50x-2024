@@ -41,7 +41,8 @@ def main():
             if profile[STR] != target[STR]:
                 break
             match_count += 1
-
+        print(f"match_count: {match_count}")
+        
         if match_count == len(STRs):
             print(profile["name"])
             exit(0)
