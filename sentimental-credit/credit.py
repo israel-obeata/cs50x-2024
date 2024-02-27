@@ -10,7 +10,7 @@ def main():
 
 
 def check_valid(n):
-    if (len(n) == 13 or len(n) == 15 or len(n) == 16) and check_sum(n):
+    if len(n) in [13, 15, 16] and check_sum(n):
         return True
     return False
 
