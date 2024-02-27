@@ -11,6 +11,7 @@ def main():
 
 def check_valid(n):
     if len(n) in [13, 15, 16] and check_sum(n):
+        print("valid")
         return True
     return False
 
@@ -21,7 +22,7 @@ def check_sum(n):
             sum += int(c)
         else:
             sum += int(c) * 2
-
+    print(f"sum: {sum}")
     if sum % 10 == 0:
         return True
     return False
