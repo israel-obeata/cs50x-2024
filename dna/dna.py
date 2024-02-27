@@ -29,11 +29,12 @@ def main():
     target = dict()
     for STR in STRs:
         target[STR] = longest_match(seq, STR)
+    print(target)
 
     # TODO: Check database for matching profiles
     for profile in profiles:
         match_count = 0
-        
+
         for STR in STRs:
             if profile[STR] != target[STR]:
                 break
