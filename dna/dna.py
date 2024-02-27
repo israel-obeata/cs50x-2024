@@ -18,7 +18,8 @@ def main():
         STRs = reader.fieldnames[1:]
         for row in reader:
             profiles.append(row)
-
+    print(profiles)
+    print()
 
     # TODO: Read DNA sequence file into a variable
     with open(argv[2]) as seq_file:
