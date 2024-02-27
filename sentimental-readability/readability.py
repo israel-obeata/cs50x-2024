@@ -1,7 +1,14 @@
 from cs50 import get_string
 
+
 def main():
-    s = get_string("Text: ")
+    text = get_string("Text: ")
+    index = calculate(text)
+    print_grade(index)
+
+
+def calculate(s):
     letters = words = sentences = 0
 
-    calculate()
+
+def print_grade(n)
