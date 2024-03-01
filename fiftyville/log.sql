@@ -9,12 +9,14 @@ SELECT description
    AND street = 'Humphrey Street';
 
 -- Find the transcripts of interviews
--- 
+-- 1. We found out, within 10 minutes of the theft, the car left the bakery.
+-- 2. The thief was seen at the ATM on Leggett Street before going to the bakery.
+-- 3. When the thief left the bakery, he called a man and spoke for less than a minute.
+--    And ask that person to purchase the earliest flight for the next day
+-- [10:15-10:25, ATM on Leggett Street, the earliest flight for the next day
 SELECT name, transcript
   FROM interviews
  WHERE year = 2023 AND month = 7 AND day = 28;
- --
-
 
 -- Find the car entry and exit information for the bakery
 SELECT activity, license_plate
