@@ -15,6 +15,11 @@ SELECT name, transcript
   FROM interviews
  WHERE year = 2023 AND month = 7 AND day = 28;
 
+-- Find ATM info
+SELECT * FROM atm_transactions
+ WHERE atm_location = Leggett Street
+   AND year = 2023 AND month = 7 AND day = 28;
+
 -- Find the car entry and exit information for the bakery
 SELECT activity, license_plate
   FROM bakery_security_logs
