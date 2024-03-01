@@ -9,7 +9,7 @@ SELECT description
 
 -- Find the transcripts of interviews
 -- 1. exit the bakery with 10:15-10:25
--- 2. ATM on Leggett Street before 10:15
+-- 2. withdraw at ATM on Leggett Street before 10:15
 -- 3. the earliest flight for the next day
 SELECT name, transcript
   FROM interviews
