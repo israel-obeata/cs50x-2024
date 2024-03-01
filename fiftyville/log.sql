@@ -34,6 +34,7 @@ SELECT origin_airport_id, destination_airport_id FROM flights
  LIMIT 1;
 
 -- Find the airports and cities info
--- Fiftyville
+-- 8  | CSF  | Fiftyville Regional Airport | Fiftyville
+-- 4  | LGA  | LaGuardia Airport           | New York City
 SELECT * FROM airports
  WHERE id = 8 OR id = 4;
