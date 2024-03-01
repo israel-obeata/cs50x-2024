@@ -39,4 +39,7 @@ SELECT origin_airport_id, destination_airport_id FROM flights
 SELECT * FROM airports
  WHERE id = 8 OR id = 4;
 
-SELECT * FROM 
+-- Find phone call
+SELECT caller, receiver FROM phone_calls
+ WHERE year = 2023 AND month = 7 AND day = 28
+   AND duration < 60;
