@@ -15,6 +15,18 @@ SELECT name, transcript
   FROM interviews
  WHERE year = 2023 AND month = 7 AND day = 28;
 
+-- Find the thief's flight id   (origin 8, destination 4)
+SELECT origin_airport_id, destination_airport_id FROM flights
+ WHERE year = 2023 AND month = 7 AND day = 29
+ ORDER BY hour, minute
+ LIMIT 1;
+
+-- Find the airports and cities info
+-- 8  | CSF  | Fiftyville Regional Airport | Fiftyville
+-- 4  | LGA  | LaGuardia Airport           | New York City
+SELECT * FROM airports
+ WHERE id = 8 OR id = 4;
+
 -- Find account_number and amount
 SELECT account_number, amount FROM atm_transactions
  WHERE atm_location = 'Leggett Street'
@@ -26,18 +38,6 @@ SELECT activity, license_plate
   FROM bakery_security_logs
  WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
    AND minute > 15 AND minute < 25;
-
- -- Find the thief's flight id   (origin 8, destination 4)
-SELECT origin_airport_id, destination_airport_id FROM flights
- WHERE year = 2023 AND month = 7 AND day = 29
- ORDER BY hour, minute
- LIMIT 1;
-
--- Find the airports and cities info
--- 8  | CSF  | Fiftyville Regional Airport | Fiftyville
--- 4  | LGA  | LaGuardia Airport           | New York City
-SELECT * FROM airports
- WHERE id = 8 OR id = 4;
 
 -- Find phone call
 SELECT caller, receiver FROM phone_calls
