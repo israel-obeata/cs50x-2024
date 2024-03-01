@@ -27,9 +27,10 @@ SELECT activity, license_plate
  WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
    AND minute > 15 AND minute < 25;
 
- -- Find the thief's flight
-SELECT * FROM flights
+ -- Find the thief's flight   (8, 4)
+SELECT origin_airport_id, destination_airport_id FROM flights
  WHERE year = 2023 AND month = 7 AND day = 29
- ORDER BY hour, minute;
+ ORDER BY hour, minute
+ LIMIT 1;
 
 
