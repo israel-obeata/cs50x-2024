@@ -3,11 +3,11 @@
 -- Find crime scene description
 SELECT description
   FROM crime_scene_reports
- WHERE month = 7 AND day = 28 AND year = 2023
+ WHERE year = 2023 AND month = 7 AND day = 28
    AND street = 'Humphrey Street';
 
 -- Find bakery security log
 SELECT activity, license_plate
-  FROM bakery
- WHERE month = 7 AND day = 28 AND year = 2023
+  FROM bakery_security_logs
+ WHERE year = 2023 AND month = 7 AND day = 28
    AND street = 'Humphrey Street';
