@@ -6,7 +6,8 @@ Average Danceability: High average danceability suggests a preference for songs 
 
 Combining these averages:
 
-If all three averages are high, the user's audio aura could be described as energetic, positive, and danceable. However, depending on the specific values, the aura could also be described as:
+If all three averages are high, the user's audio aura could be described as energetic, positive, and danceable.
+However, depending on the specific values, the aura could also be described as:
 
 Upbeat and happy: If energy and valence are high, but danceability is moderate.
 Fast-paced and stimulating: If energy and danceability are high, but valence is moderate.
