@@ -8,7 +8,7 @@ SELECT description
    AND street = 'Humphrey Street';
 
 -- Find the transcripts of interviews
--- 1. exit the bakery between 10:15-10:25
+-- 1. exit the bakery with 10:15-10:25
 -- 2. ATM on Leggett Street before 10:15
 -- 3. the earliest flight for the next day
 SELECT name, transcript
