@@ -38,3 +38,5 @@ SELECT origin_airport_id, destination_airport_id FROM flights
 -- 4  | LGA  | LaGuardia Airport           | New York City
 SELECT * FROM airports
  WHERE id = 8 OR id = 4;
+
+SELECT * FROM 
