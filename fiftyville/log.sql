@@ -7,7 +7,7 @@ SELECT description
    AND street = 'Humphrey Street';
 
 -- Find bakery security log
-SELECT description
-  FROM crime_scene_reports
+SELECT activity, license_plate
+  FROM bakery
  WHERE month = 7 AND day = 28 AND year = 2023
    AND street = 'Humphrey Street';
