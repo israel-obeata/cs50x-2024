@@ -23,11 +23,9 @@ SELECT id, origin_airport_id, destination_airport_id FROM flights
  LIMIT 1;
 
 -- Find the info of airports and cities
--- 8  | CSF  | Fiftyville Regional Airport | Fiftyville
--- 4  | LGA  | LaGuardia Airport           | New York City ★★★
+-- 8  | CSF  | Fiftyville Regional Airport | Fiftyville - New York City ★★★
 SELECT * FROM airports
  WHERE id = 8 OR id = 4;
-
 
 -- Find the thief. (bakery + phone calls + flight + atm)
 -- Bruce ★★★
