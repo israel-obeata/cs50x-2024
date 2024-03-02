@@ -17,6 +17,8 @@ SELECT people.name FROM people
 
 -- Find the accomplice
 
+SELECT name FROM people AS p
+  JOIN phone_calls AS c ON 
 
 SELECT name FROM people AS p
  WHERE phone_number IN
