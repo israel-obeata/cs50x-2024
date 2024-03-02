@@ -48,9 +48,9 @@ SELECT caller, receiver FROM phone_calls
 SELECT people.id, people.name, people.passport_number, passengers.seat FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.name = calls.caller
+  JOIN passengers ON people.passport_number = passengers.passport_number
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
-  JOIN passengers ON people.passport_number = passengers.passport_number
  WHERE people.lisence_plate IN
        (SELECT lisence_plate FROM bakery
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
@@ -64,6 +64,10 @@ SELECT people.id, people.name, people.passport_number, passengers.seat FROM peop
        (SELECT passport_number FROM passengers
          WHERE flight_id = 36)
    AND people.id IN
-       (SELECT bank.person_id FROM bank)
-   AND atm.acount IN
-       (SELECT acount FROM bank_aounts)
+       (SELECT person_id FROM bank
+         WHERE bank.account_number IN
+               (SELECT account_number FROM atm
+                 WHERE atm_location = 'Leggett Street'
+                   AND year = 2023 AND month = 7 AND day = 28
+                   AND transaction_type = 'withdraw'));
+
