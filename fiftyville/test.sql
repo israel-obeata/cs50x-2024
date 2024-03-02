@@ -26,7 +26,7 @@ SELECT name FROM people AS p
           AND c.duration <= 60);
 
 SELECT * FROM phone_calls AS c
-        WHERE c.caller = 'Bruce'
-          AND c.year = 2023 AND c.month = 7 AND c.day = 28
-          AND c.duration <= 60;
+ WHERE c.caller = 'Bruce'
+   AND c.year = 2023 AND c.month = 7 AND c.day = 28
+   AND c.duration <= 60;
 
