@@ -18,15 +18,15 @@ SELECT name, transcript
    AND transcript LIKE '%bakery%';
 
 -- Find the thief's flight id   (id 36, origin 8, destination 4)
-SELECT id, origin_airport_id, destination_airport_id FROM flights
+SELECT id, destination_airport_id FROM flights
  WHERE year = 2023 AND month = 7 AND day = 29
  ORDER BY hour, minute
  LIMIT 1;
 
 -- Find the info of airports and cities
 -- Fiftyville -> New York City ★★★
-SELECT * FROM airports
- WHERE id = 8 OR id = 4;
+SELECT city FROM airports
+ WHERE id = 4;
 
 -- Find the thief. (bakery + phone calls + flight + atm)
 -- Bruce ★★★
@@ -48,6 +48,7 @@ SELECT name, phone_number FROM people
    AND atm.transaction_type = 'withdraw';
 
 -- Find the accomplice
+-- Robin ★★★
 SELECT name FROM people AS p
  WHERE p.phone_number IN
        (SELECT receiver FROM phone_calls AS c
