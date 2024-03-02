@@ -43,7 +43,8 @@ SELECT activity, license_plate
 -- Find phone calls
 SELECT caller, receiver FROM phone_calls
  WHERE year = 2023 AND month = 7 AND day = 28
-   AND duration < 60;
+   AND duration < 60
+ ORDER BY phone_calls.duration;;
 
 
 SELECT people.id, people.name, people.passport_number, passengers.seat FROM people
