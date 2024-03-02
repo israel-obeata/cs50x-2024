@@ -48,11 +48,11 @@ SELECT caller, receiver FROM phone_calls
 
 
 SELECT people.name FROM people
-  JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
-  JOIN phone_calls AS calls ON people.name = calls.caller
+  JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
+  JOIN phone_calls ON people.name = phone_calls.caller
   JOIN passengers ON people.passport_number = passengers.passport_number
-  JOIN bank_accounts AS bank ON people.id = bank.person_id
-  JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
+  JOIN bank_accounts ON people.id = bank_accounts.person_id
+  JOIN atm_transactions AS atm ON bank_accounts.account_number = atm_transactions.account_number
  WHERE people.license_plate IN
        (SELECT license_plate FROM bakery_security_logs
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
