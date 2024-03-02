@@ -43,3 +43,15 @@ SELECT activity, license_plate
 SELECT caller, receiver FROM phone_calls
  WHERE year = 2023 AND month = 7 AND day = 28
    AND duration < 60;
+
+
+SELECT id FROM people
+WHERE people.lisence IN (
+    SELECT lisence FROM bakery
+)
+AND people.phone_number IN (
+    SELECT 拨号number FROM phone_calls
+)
+AND atm.acount IN (
+    SELECT acount FROM bank_aounts
+)
