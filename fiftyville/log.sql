@@ -28,6 +28,8 @@ SELECT id, origin_airport_id, destination_airport_id FROM flights
 SELECT * FROM airports
  WHERE id = 8 OR id = 4;
 
+
+
 -- Find account_number and amount
 SELECT account_number, amount FROM atm_transactions
  WHERE atm_location = 'Leggett Street'
@@ -45,6 +47,7 @@ SELECT caller, receiver FROM phone_calls
  WHERE year = 2023 AND month = 7 AND day = 28
    AND duration < 60
  ORDER BY phone_calls.duration;;
+
 
 
 SELECT people.name FROM people
