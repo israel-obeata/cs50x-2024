@@ -46,8 +46,9 @@ SELECT caller, receiver FROM phone_calls
 
 
 SELECT id FROM people
+  JOIN bakery_security_logs ON  = 
   JOIN phone_calls ON people.name = phone_calls.caller
-  JOIN 
+  JOIN
 WHERE people.lisence IN (
     SELECT lisence FROM bakery
 )
