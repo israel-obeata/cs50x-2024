@@ -18,17 +18,9 @@ SELECT name, phone_number FROM people
 -- Find the accomplice
 
 SELECT name FROM people AS p
-  JOIN phone_calls AS c ON
-
-SELECT name FROM people AS p
- WHERE phone_number IN
+ WHERE p.phone_number IN
        (SELECT receiver FROM phone_calls AS c
-        WHERE c.caller = 'Bruce'
+        WHERE c.caller = '(367) 555-5533'
           AND c.year = 2023 AND c.month = 7 AND c.day = 28
           AND c.duration <= 60);
-
-SELECT * FROM phone_calls AS c
- WHERE c.caller = 'Bruce'
-   AND c.year = 2023 AND c.month = 7 AND c.day = 28
-   AND c.duration <= 60;
 
