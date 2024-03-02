@@ -62,7 +62,7 @@ SELECT people.id, people.name, people.passport_number, passengers.seat FROM peop
            AND duration < 60)
    AND people.passport_number IN
        (SELECT passport_number FROM passengers
-         WHERE flight_id = )
+         WHERE flight_id = 36)
    AND people.id IN
        (SELECT bank.person_id FROM bank)
    AND atm.acount IN
