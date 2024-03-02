@@ -13,7 +13,8 @@ SELECT description
 -- 3. the earliest flight for the next day
 SELECT name, transcript
   FROM interviews
- WHERE year = 2023 AND month = 7 AND day = 28;
+ WHERE year = 2023 AND month = 7 AND day = 28
+   AND transcript LIKE '%bakery%';
 
 -- Find the thief's flight id   (id 36, origin 8, destination 4)
 SELECT id, origin_airport_id, destination_airport_id FROM flights
