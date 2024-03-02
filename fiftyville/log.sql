@@ -67,7 +67,7 @@ SELECT people.name FROM people
          WHERE flight_id = 36)
    AND people.id IN
        (SELECT person_id FROM bank_accounts
-         WHERE bank.account_number IN
+         WHERE account_number IN
                (SELECT account_number FROM atm_transactions
                  WHERE atm_location = 'Leggett Street'
                    AND year = 2023 AND month = 7 AND day = 28
