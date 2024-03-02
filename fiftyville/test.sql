@@ -21,7 +21,7 @@ SELECT name FROM people AS p
     ON p.phone_number = c.caller
  WHERE p.phone_number =
        (SELECT receiver FROM phone_calls AS c
-        WHERE p.name = 'Bruce'
+        WHERE c.caller = 'Bruce'
           AND c.year = 2023 AND c.month = 7 AND c.day = 28
           AND c.duration <= 60);
 
