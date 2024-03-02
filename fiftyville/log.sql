@@ -51,8 +51,8 @@ SELECT people.id, people.name, people.passport_number, passengers.seat FROM peop
   JOIN passengers ON people.passport_number = passengers.passport_number
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
- WHERE people.lisence_plate IN
-       (SELECT lisence_plate FROM bakery_security_logs
+ WHERE people.license_plate IN
+       (SELECT license_plate FROM bakery_security_logs
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
            AND minute > 15 AND minute < 25
            AND activity = 'exit')
