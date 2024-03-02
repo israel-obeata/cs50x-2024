@@ -17,14 +17,14 @@ SELECT name, transcript
  WHERE year = 2023 AND month = 7 AND day = 28
    AND transcript LIKE '%bakery%';
 
--- Find the thief's flight id   (id 36, origin 8, destination 4)
+-- Find the thief's flight id   (id 36, destination id 4)
 SELECT id, destination_airport_id FROM flights
  WHERE year = 2023 AND month = 7 AND day = 29
  ORDER BY hour, minute
  LIMIT 1;
 
--- Find the info of airports and cities
--- Fiftyville -> New York City ★★★
+-- Find the destination
+-- New York City ★★★
 SELECT city FROM airports
  WHERE id = 4;
 
