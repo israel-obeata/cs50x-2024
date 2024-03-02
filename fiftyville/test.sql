@@ -15,7 +15,7 @@ SELECT people.name FROM people
    AND atm.year = 2023 AND atm.month = 7 AND atm.day = 28
    AND atm.transaction_type = 'withdraw';
 
--- Find 
+-- Find the accomplice
 SELECT name FROM people AS p
   JOIN phone_calls AS c
     ON p.phone_number = c.caller
