@@ -51,8 +51,11 @@ SELECT id, name, passport_number FROM people
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
  WHERE people.lisence_plate IN
-       (SELECT lisence_plate FROM bakery)
-   AND people.phone_number IN
+       (SELECT lisence_plate FROM bakery
+         WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
+           AND minute > 15 AND minute < 25
+           AND activity = 'exit')
+   AND people.name IN
        (SELECT 拨号number FROM phone_calls)
    AND atm.acount IN
        (SELECT acount FROM bank_aounts)
