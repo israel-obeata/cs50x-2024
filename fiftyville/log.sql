@@ -21,7 +21,7 @@ SELECT origin_airport_id, destination_airport_id FROM flights
  ORDER BY hour, minute
  LIMIT 1;
 
--- Find the airports and cities info
+-- Find the airports and city
 -- 8  | CSF  | Fiftyville Regional Airport | Fiftyville
 -- 4  | LGA  | LaGuardia Airport           | New York City
 SELECT * FROM airports
