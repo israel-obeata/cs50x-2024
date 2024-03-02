@@ -47,7 +47,7 @@ SELECT caller, receiver FROM phone_calls
  ORDER BY phone_calls.duration;;
 
 
-SELECT people.id, people.name, people.passport_number, passengers.seat FROM people
+SELECT people.name FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN passengers ON people.passport_number = passengers.passport_number
