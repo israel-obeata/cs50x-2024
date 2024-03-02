@@ -14,3 +14,9 @@ SELECT people.name FROM people
    AND atm.atm_location = 'Leggett Street'
    AND atm.year = 2023 AND atm.month = 7 AND atm.day = 28
    AND atm.transaction_type = 'withdraw';
+
+SELECT receiver FROM phone_calls AS c
+  JOIN people AS p ON c.caller = p.name
+ WHERE p.name = 'Bruce'
+   AND c.year = 2023 AND c.month = 7 AND c.day = 28
+   AND c.duration <= 60;

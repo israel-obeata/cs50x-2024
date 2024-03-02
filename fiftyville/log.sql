@@ -46,6 +46,7 @@ SELECT people.name FROM people
    AND atm.transaction_type = 'withdraw';
 
 SELECT receiver FROM phone_calls AS c
-  JOIN people AS c ON people.name = c.caller
- WHERE c.year = 2023 AND c.month = 7 AND c.day = 28
-   AND c.duration <= 60
+  JOIN people AS p ON c.caller = p.name
+ WHERE p.name = 'Bruce'
+   AND c.year = 2023 AND c.month = 7 AND c.day = 28
+   AND c.duration <= 60;
