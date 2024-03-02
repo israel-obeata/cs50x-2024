@@ -9,8 +9,8 @@ SELECT description
    AND description LIKE '%bakery%';
 
 -- Find the transcripts of interviews
--- 1. exit the bakery with 10:15-10:25
--- 2. withdraw at ATM on Leggett Street before 10:15
+-- 1. exit 10:15-10:25
+-- 2. withdraw at ATM on Leggett Street
 -- 3. the earliest flight for the next day
 SELECT name, transcript
   FROM interviews
@@ -52,6 +52,6 @@ SELECT name, phone_number FROM people
 SELECT name FROM people AS p
  WHERE p.phone_number IN
        (SELECT receiver FROM phone_calls AS c
-        WHERE c.caller = '(367) 555-5533'
-          AND c.year = 2023 AND c.month = 7 AND c.day = 28
-          AND c.duration <= 60);
+         WHERE c.caller = '(367) 555-5533'
+           AND c.year = 2023 AND c.month = 7 AND c.day = 28
+           AND c.duration <= 60);
