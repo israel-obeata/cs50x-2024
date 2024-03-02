@@ -1,4 +1,5 @@
-SELECT people.name FROM people
+--SELECT people.name FROM people
+SELECT * FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   LEFT JOIN phone_calls ON people.name = phone_calls.caller
   --JOIN passengers ON people.passport_number = passengers.passport_number
@@ -10,8 +11,8 @@ SELECT people.name FROM people
    AND bakery.activity = 'exit'
 
   --JOIN phone_calls ON people.name = phone_calls.caller
-   AND phone_calls.year = 2023 AND phone_calls.month = 7 AND phone_calls.day = 28
-   AND phone_calls.duration <= 60
+   --AND phone_calls.year = 2023 AND phone_calls.month = 7 AND phone_calls.day = 28
+   --AND phone_calls.duration <= 60
    --AND passengers.flight_id = 36
    --AND atm_transactions.atm_location = 'Leggett Street'
    --AND atm_transactions.year = 2023 AND atm_transactions.month = 7 AND atm_transactions.day = 28
