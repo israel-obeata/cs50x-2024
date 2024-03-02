@@ -46,15 +46,15 @@ SELECT caller, receiver FROM phone_calls
 
 
 SELECT id FROM people
-  JOIN bakery_security_logs ON  = 
+  JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
   JOIN phone_calls ON people.name = phone_calls.caller
   JOIN
-WHERE people.lisence IN (
+ WHERE people.lisence IN (
     SELECT lisence FROM bakery
 )
-AND people.phone_number IN (
+   AND people.phone_number IN (
     SELECT 拨号number FROM phone_calls
 )
-AND atm.acount IN (
+   AND atm.acount IN (
     SELECT acount FROM bank_aounts
 )
