@@ -29,7 +29,8 @@ SELECT * FROM airports
 
 -- Find the thief. (bakery + phone calls + flight + atm)
 -- Bruce ★★★
-SELECT people.name FROM people
+-- (367) 555-5533
+SELECT name, phone_number FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.phone_number = calls.caller
   JOIN passengers ON people.passport_number = passengers.passport_number
