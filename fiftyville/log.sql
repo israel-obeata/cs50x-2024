@@ -15,8 +15,8 @@ SELECT name, transcript
   FROM interviews
  WHERE year = 2023 AND month = 7 AND day = 28;
 
--- Find the thief's flight id   (origin 8, destination 4)
-SELECT origin_airport_id, destination_airport_id FROM flights
+-- Find the thief's flight id   (id 36, origin 8, destination 4)
+SELECT id, origin_airport_id, destination_airport_id FROM flights
  WHERE year = 2023 AND month = 7 AND day = 29
  ORDER BY hour, minute
  LIMIT 1;
