@@ -52,21 +52,21 @@ SELECT people.id, people.name, people.passport_number, passengers.seat FROM peop
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
  WHERE people.lisence_plate IN
-       (SELECT lisence_plate FROM bakery
+       (SELECT lisence_plate FROM bakery_security_logs
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
            AND minute > 15 AND minute < 25
            AND activity = 'exit')
    AND people.name IN
-       (SELECT caller FROM calls
+       (SELECT caller FROM phone_calls
          WHERE year = 2023 AND month = 7 AND day = 28
            AND duration < 60)
    AND people.passport_number IN
        (SELECT passport_number FROM passengers
          WHERE flight_id = 36)
    AND people.id IN
-       (SELECT person_id FROM bank
+       (SELECT person_id FROM bank_accounts
          WHERE bank.account_number IN
-               (SELECT account_number FROM atm
+               (SELECT account_number FROM atm_transactions
                  WHERE atm_location = 'Leggett Street'
                    AND year = 2023 AND month = 7 AND day = 28
                    AND transaction_type = 'withdraw'));
