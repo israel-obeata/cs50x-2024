@@ -51,33 +51,19 @@ SELECT caller, receiver FROM phone_calls
 
 
 SELECT people.name FROM people
-  JOIN bakery_security_logs
-    ON people.license_plate = bakery_security_logs.license_plate
-  JOIN phone_calls
-    ON people.name = phone_calls.caller
-  JOIN passengers
-    ON people.passport_number = passengers.passport_number
-  JOIN bank_accounts
-    ON people.id = bank_accounts.person_id
-  JOIN atm_transactions
-    ON bank_accounts.account_number = atm_transactions.account_number
- WHERE people.license_plate IN
-       (SELECT license_plate FROM bakery_security_logs
-         WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
-           AND minute >= 15 AND minute <= 25
-           AND activity = 'exit')
-   AND people.name IN
-       (SELECT caller FROM phone_calls
-         WHERE year = 2023 AND month = 7 AND day = 28
-           AND duration < 60)
-   AND people.passport_number IN
-       (SELECT passport_number FROM passengers
-         WHERE flight_id = 36)
-   AND people.id IN
-       (SELECT person_id FROM bank_accounts
-         WHERE account_number IN
-               (SELECT account_number FROM atm_transactions
-                 WHERE atm_location = 'Leggett Street'
-                   AND year = 2023 AND month = 7 AND day = 28
-                   AND transaction_type = 'withdraw'));
+  JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
+  JOIN phone_calls AS calls ON people.phone_number = calls.caller
+  JOIN passengers ON people.passport_number = passengers.passport_number
+  JOIN bank_accounts AS bank ON people.id = bank.person_id
+  JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
+ WHERE bakery.year = 2023 AND bakery.month = 7 AND bakery.day = 28
+   AND bakery.hour = 10
+   AND bakery.minute >= 15 AND bakery.minute <= 25
+   AND bakery.activity = 'exit'
+   AND calls.year = 2023 AND calls.month = 7 AND calls.day = 28
+   AND calls.duration <= 60
+   AND passengers.flight_id = 36
+   AND atm.atm_location = 'Leggett Street'
+   AND atm.year = 2023 AND atm.month = 7 AND atm.day = 28
+   AND atm.transaction_type = 'withdraw';
 
