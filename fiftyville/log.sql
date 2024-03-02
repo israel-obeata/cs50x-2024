@@ -45,7 +45,7 @@ SELECT caller, receiver FROM phone_calls
    AND duration < 60;
 
 
-SELECT id, name, passport_number FROM people
+SELECT people.id, people.name, people.passport_number, passengers.seat FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN bank_accounts AS bank ON people.id = bank.person_id
@@ -60,6 +60,9 @@ SELECT id, name, passport_number FROM people
        (SELECT caller FROM calls
          WHERE year = 2023 AND month = 7 AND day = 28
            AND duration < 60)
+   AND people.passport_number IN
+       (SELECT passport_number FROM passengers
+         WHERE flight_id = )
    AND people.id IN
        (SELECT bank.person_id FROM bank)
    AND atm.acount IN
