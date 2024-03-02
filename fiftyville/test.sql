@@ -1,25 +1,17 @@
-SELECT people.name FROM people
+SELECT people.name
+  FROM people
   JOIN bakery_security_logs ON people.license_plate = bakery_security_logs.license_plate
   JOIN phone_calls ON people.name = phone_calls.caller
   JOIN passengers ON people.passport_number = passengers.passport_number
   JOIN bank_accounts ON people.id = bank_accounts.person_id
   JOIN atm_transactions ON bank_accounts.account_number = atm_transactions.account_number
- WHERE people.license_plate IN
-       (SELECT license_plate FROM bakery_security_logs
-         WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
-           AND minute >= 15 AND minute <= 25
-           AND activity = 'exit')
-   AND people.name IN
-       (SELECT caller FROM phone_calls
-         WHERE year = 2023 AND month = 7 AND day = 28
-           AND duration < 60)
-   AND people.passport_number IN
-       (SELECT passport_number FROM passengers
-         WHERE flight_id = 36)
-   AND people.id IN
-       (SELECT person_id FROM bank_accounts
-         WHERE account_number IN
-               (SELECT account_number FROM atm_transactions
-                 WHERE atm_location = 'Leggett Street'
-                   AND year = 2023 AND month = 7 AND day = 28
-                   AND transaction_type = 'withdraw'));
+ WHERE bakery_security_logs.year = 2023 AND bakery_security_logs.month = 7 AND bakery_security_logs.day = 28
+   AND bakery_security_logs.hour = 10
+   AND bakery_security_logs.minute >= 15 AND bakery_security_logs.minute <= 25
+   AND bakery_security_logs.activity = 'exit'
+   AND phone_calls.year = 2023 AND phone_calls.month = 7 AND phone_calls.day = 28
+   AND phone_calls.duration < 60
+   AND passengers.flight_id = 36
+   AND atm_transactions.atm_location = 'Leggett Street'
+   AND atm_transactions.year = 2023 AND atm_transactions.month = 7 AND atm_transactions.day = 28
+   AND atm_transactions.transaction_type = 'withdraw';
