@@ -45,13 +45,13 @@ SELECT caller, receiver FROM phone_calls
    AND duration < 60;
 
 
-SELECT id FROM people
+SELECT id, name, passport_number FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
- WHERE people.lisence IN
-       (SELECT lisence FROM bakery)
+ WHERE people.lisence_plate IN
+       (SELECT lisence_plate FROM bakery)
    AND people.phone_number IN
        (SELECT 拨号number FROM phone_calls)
    AND atm.acount IN
