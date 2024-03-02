@@ -47,5 +47,5 @@ SELECT people.name FROM people
 
 SELECT receiver FROM phone_calls AS c
   JOIN people AS c ON people.name = c.caller
-  WHERE c.year = 2023 AND c.month = 7 AND c.day = 28
+ WHERE c.year = 2023 AND c.month = 7 AND c.day = 28
    AND c.duration <= 60
