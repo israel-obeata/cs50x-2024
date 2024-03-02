@@ -50,7 +50,7 @@ SELECT id, name, passport_number FROM people
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
-  JOIN passengers ON 
+  JOIN passengers ON people.passport_number = passengers.passport_number
  WHERE people.lisence_plate IN
        (SELECT lisence_plate FROM bakery
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
