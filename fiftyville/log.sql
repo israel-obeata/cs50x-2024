@@ -29,7 +29,8 @@ SELECT * FROM airports
  WHERE id = 8 OR id = 4;
 
 
--- Find the thief.(Bruce ★★★)
+-- Find the thief. (bakery + phone calls + flight + atm)
+-- Bruce ★★★
 SELECT people.name FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.phone_number = calls.caller
