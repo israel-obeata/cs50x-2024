@@ -48,7 +48,8 @@ SELECT caller, receiver FROM phone_calls
 SELECT id FROM people
   JOIN bakery_security_logs AS bakery ON people.license_plate = bakery.license_plate
   JOIN phone_calls AS calls ON people.name = calls.caller
-  JOIN
+  JOIN bank_accounts AS bank ON people.id = bank.person_id
+  JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
  WHERE people.lisence IN (
     SELECT lisence FROM bakery
 )
