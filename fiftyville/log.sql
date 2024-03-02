@@ -59,5 +59,6 @@ SELECT id, name, passport_number FROM people
        (SELECT caller FROM calls
          WHERE year = 2023 AND month = 7 AND day = 28
            AND duration < 60)
+   AND people.id = bank.person_id
    AND atm.acount IN
        (SELECT acount FROM bank_aounts)
