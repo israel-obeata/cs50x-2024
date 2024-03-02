@@ -5,7 +5,8 @@
 SELECT description
   FROM crime_scene_reports
  WHERE year = 2023 AND month = 7 AND day = 28
-   AND street = 'Humphrey Street';
+   AND street = 'Humphrey Street'
+   AND description LIKE '%bakery%';
 
 -- Find the transcripts of interviews
 -- 1. exit the bakery with 10:15-10:25
