@@ -56,6 +56,8 @@ SELECT id, name, passport_number FROM people
            AND minute > 15 AND minute < 25
            AND activity = 'exit')
    AND people.name IN
-       (SELECT 拨号number FROM phone_calls)
+       (SELECT caller FROM calls
+         WHERE year = 2023 AND month = 7 AND day = 28
+           AND duration < 60)
    AND atm.acount IN
        (SELECT acount FROM bank_aounts)
