@@ -50,12 +50,9 @@ SELECT id FROM people
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
- WHERE people.lisence IN (
-    SELECT lisence FROM bakery
-)
-   AND people.phone_number IN (
-    SELECT 拨号number FROM phone_calls
-)
-   AND atm.acount IN (
-    SELECT acount FROM bank_aounts
-)
+ WHERE people.lisence IN
+       (SELECT lisence FROM bakery)
+   AND people.phone_number IN
+       (SELECT 拨号number FROM phone_calls)
+   AND atm.acount IN
+       (SELECT acount FROM bank_aounts)
