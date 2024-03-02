@@ -1,7 +1,7 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
 -- Find crime scene description
--- 1. bakery    2. 10:15   3. witnesses
+-- 1. bakery    2. 10:15   3. 3 witnesses
 SELECT description
   FROM crime_scene_reports
  WHERE year = 2023 AND month = 7 AND day = 28
@@ -50,6 +50,7 @@ SELECT id, name, passport_number FROM people
   JOIN phone_calls AS calls ON people.name = calls.caller
   JOIN bank_accounts AS bank ON people.id = bank.person_id
   JOIN atm_transactions AS atm ON bank.account_number = atm.account_number
+  JOIN passengers ON 
  WHERE people.lisence_plate IN
        (SELECT lisence_plate FROM bakery
          WHERE year = 2023 AND month = 7 AND day = 28 AND hour = 10
