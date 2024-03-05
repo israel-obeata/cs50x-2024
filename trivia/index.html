@@ -28,7 +28,7 @@
                 <h2>Part 2: Free Response</h2>
                 <hr>
                 <h3>In which country is it illegal to own only one guinea pig, as a lone guinea pig might get lonely?</h3>
-                <input type="text"></input>
+                <input id = "input" type="text"></input>
                 <button id="check">Check Answer</button>
                 <p id="feedback2"></p>
             </div>
@@ -58,7 +58,7 @@
                 // Check free response submission
                 btn = document.getElementById('check');
                 btn.addEventListener('click', function() {
-                    let input = document.querySelector('input');
+                    let input = document.getElementById('input');
                     if (input.value.toLowerCase() === 'switzerland') {
                         input.style.backgroundColor = 'green';
                         document.querySelector('#feedback2').innerHTML = 'Correct!';
