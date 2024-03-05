@@ -12,10 +12,16 @@
 .nav-link {
     color: 口#666777;
     font-weight: 500;
+    position: relative;
 }
 
 .nav-link:hover,
 .nav-link,
 .active {
     color: 口#000;
+}
+
+.nav-link:before {
+    content:"";
+    position: absolute;
 }
