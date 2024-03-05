@@ -6,7 +6,6 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-
             // Wait for DOM content to load
             document.addEventListener('DOMContentLoaded', function() {
 
@@ -41,7 +40,7 @@
                 // Check free response submission
                 document.querySelector('#check').addEventListener('click', function() {
                     let input = document.querySelector('input');
-                    if (input.value === 'Switzerland') {
+                    if (input.value == 'Switzerland') {
                         input.style.backgroundColor = 'green';
                         input.parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                     }
