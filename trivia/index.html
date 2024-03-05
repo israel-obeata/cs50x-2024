@@ -51,7 +51,7 @@
                 for (let i = 0; i < incorrects.length; i++) {
                     incorrects[i].addEventListener('click', function() {
                         incorrects[i].style.backgroundColor = 'Red';
-                        incorrects[i].parentElement.querySelector('#feedback1').innerHTML = 'Incorrect';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect';
                     });
                 }
 
@@ -60,11 +60,11 @@
                     let input = document.querySelector('input');
                     if (input.value === 'Switzerland') {
                         input.style.backgroundColor = 'green';
-                        input.parentElement.querySelector('#feedback2').innerHTML = 'Correct!';
+                        document.querySelector('#feedback2').innerHTML = 'Correct!';
                     }
                     else {
                         input.style.backgroundColor = 'red';
-                        input.parentElement.querySelector('#feedback2').innerHTML = 'Incorrect';
+                        document.querySelector('#feedback2').innerHTML = 'Incorrect';
                     }
                 });
             });
