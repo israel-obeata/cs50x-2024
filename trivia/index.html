@@ -59,8 +59,9 @@
                 btn = document.getElementById('check');
                 btn.addEventListener('click', function() {
                     let input = document.querySelector('input');
-                    if (input.value === 'Switzerland') {
-                        input.style.backgroundColor = 'green';
+                    if (input.value.toLowerCase() === 'switzerland') {
+                        // input.style.backgroundColor = 'green';
+                        input.style.color = 'green';
                         document.querySelector('#feedback2').innerHTML = 'Correct!';
                     }
                     else {
