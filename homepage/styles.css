@@ -30,7 +30,7 @@
         transform: translateX(-50%);
         width: 0;
         height: 2px;
-        background-color: #009970;
+        background-color: #ff7f50;
         visibility: hidden;
         transition: 0.3s ease-in-out;
     }
