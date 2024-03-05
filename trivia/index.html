@@ -6,7 +6,6 @@
         <link href="styles.css" rel="stylesheet">
         <title>Trivia!</title>
         <script>
-
             // Wait for DOM content to load
             document.addEventListener('DOMContentLoaded', function() {
 
@@ -16,11 +15,7 @@
                 // Add event listeners to each correct button
                 for (let i = 0; i < corrects.length; i++) {
                     corrects[i].addEventListener('click', function() {
-
-                        // Set background color to green
                         corrects[i].style.backgroundColor = 'Green';
-
-                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
                         corrects[i].parentElement.querySelector('.feedback').innerHTML = 'Correct!';
                     });
                 }
@@ -29,11 +24,7 @@
                 let incorrects = document.querySelectorAll(".incorrect");
                 for (let i = 0; i < incorrects.length; i++) {
                     incorrects[i].addEventListener('click', function() {
-
-                        // Set background color to red
                         incorrects[i].style.backgroundColor = 'Red';
-
-                        // Go to parent element of correct button and find the first element with class "feedback" which has that parent
                         incorrects[i].parentElement.querySelector('.feedback').innerHTML = 'Incorrect';
                     });
                 }
