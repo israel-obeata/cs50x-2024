@@ -37,10 +37,8 @@
             // Wait for DOM content to load
             document.addEventListener('DOMContentLoaded', function() {
 
-                // Get all elements with class "correct"
+                //  When any correct answer is clicked, change color to green.
                 let corrects = document.querySelectorAll('.correct');
-
-                // Add event listeners to each correct button
                 for (let i = 0; i < corrects.length; i++) {
                     corrects[i].addEventListener('click', function() {
                         corrects[i].style.backgroundColor = 'Green';
