@@ -56,7 +56,8 @@
                 }
 
                 // Check free response submission
-                document.getElementById('check').addEventListener('click', function() {
+                btn = document.getElementById('check');
+                btn.addEventListener('click', function() {
                     let input = document.querySelector('input');
                     if (input.value === 'Switzerland') {
                         input.style.backgroundColor = 'green';
