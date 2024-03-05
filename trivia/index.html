@@ -15,14 +15,19 @@
                 let correct = document.querySelector('.correct');
                 correct.addEventListener('click', function() {
                     correct.style.backgroundColor = 'green';
-                    document.querySelector('#feedback1').innerHTML = "Correct!"
+                    document.querySelector('#feedback1').innerHTML = 'Correct!';
                 })
 
                 // When any incorrect answer is clicked, change color to red
-                let incorrect = document.querySelector('.incorrect');
-                incorrect.addEventListener('click', function() {
-                    incorrect.style.backgroundColor = 
-                })
+                let incorrects = document.querySelectorAll('.incorrect');
+                for (let i = 0, len = incorrects.length; i < len; i++)
+                {
+                    incorrects[i].addEventListener('click', function() {
+                        incorrects[i].style.backgroundColor = 'red';
+                        document.querySelector('#feedback1').innerHTML = 'Incorrect!';
+                    })
+                }
+
             })
         </script>
     </head>
