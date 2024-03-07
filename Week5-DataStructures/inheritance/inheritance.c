@@ -1,3 +1,5 @@
+// https://cs50.harvard.edu/x/2024/psets/5/inheritance/
+
 // Simulate genetic inheritance of blood type
 
 #include <stdbool.h>
