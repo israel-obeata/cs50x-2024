@@ -1,3 +1,5 @@
+// https://cs50.harvard.edu/x/2024/psets/2/readability/
+
 #include <cs50.h>
 #include <ctype.h>
 #include <math.h>

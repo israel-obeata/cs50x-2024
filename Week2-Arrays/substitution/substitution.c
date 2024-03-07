@@ -1,3 +1,5 @@
+// https://cs50.harvard.edu/x/2024/psets/2/substitution/
+
 #include <cs50.h>
 #include <ctype.h>
 #include <stdio.h>
