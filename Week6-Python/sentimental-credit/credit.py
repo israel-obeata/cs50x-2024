@@ -1,3 +1,5 @@
+# https://cs50.harvard.edu/x/2024/psets/6/credit/
+
 from cs50 import get_string
 
 
