@@ -202,9 +202,10 @@ def register():
 @app.route("/sell", methods=["GET", "POST"])
 @login_required
 def sell():
+    user_id = session["user_id"]
+
     if request.method == "POST":
         pass
     else:
-        user_id = session["user_id"]
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
         return render_template("sell.html", symbols=symbols)
