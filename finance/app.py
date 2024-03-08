@@ -60,6 +60,11 @@ def buy():
         except:
             return apology("Shares must be an integer!")
 
+        if shares <= 0:
+            return apology("Shares must be a positive integer!")
+
+        user_id = session["user_id"]
+
     else:
         return render_template("buy.html")
 
