@@ -127,7 +127,9 @@ def register():
         if confirmation != password:
             return apology("Password do not match!")
 
-        db.execute("INSERT INTO users")
+        hash = generate_psw_hash(password)
+
+        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
         return redirect("/")
 
     else:
