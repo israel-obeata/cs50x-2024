@@ -213,10 +213,12 @@ def sell():
         if shares <= 0:
             return apology("Shares must be a positive number!")
 
-        item_price = lookup(symbol)["price"]
-        item_symbol = lookup(symbol)["symbol"]
+        if not symbol:
+            item_price = lookup(symbol)["price"]
+        else:
+            return apology("Please enter correct symbol!")
 
-        shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, item_symbol)
+        shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, symbol)
 
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
