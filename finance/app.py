@@ -129,8 +129,11 @@ def register():
 
         hash = generate_psw_hash(password)
 
-        db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
-        return redirect("/")
+        try:
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+            return redirect("/")
+        except:
+            return apology("Username has already been registered!")
 
     else:
         return render_template("register.html")
