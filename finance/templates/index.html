@@ -17,22 +17,22 @@
         <tbody>
             {% for stock in stocks %}
                 <tr>
-                    <td>{{ stock.symbol }}</td>
-                    <td>{{ stock.totalShares }}</td>
-                    <td>{{ usd(stock.price) }}</td>
-                    <td>{{ usd(stock.totalShares * stock.price) }}</td>
+                    <td class="text-start">{{ stock.symbol }}</td>
+                    <td class="text-end">{{ stock.totalShares }}</td>
+                    <td class="text-end">{{ usd(stock.price) }}</td>
+                    <td class="text-end">{{ usd(stock.totalShares * stock.price) }}</td>
                 </tr>
             {% endfor %}
                 <tr>
                     <td colspan="2"></td>
-                    <td><strong> CASH </strong></td>
-                    <td><strong> {{ usd(cash) }} </strong></td>
+                    <td class="text-end"><strong> CASH </strong></td>
+                    <td class="text-end"><strong> {{ usd(cash) }} </strong></td>
                 </tr>
         </tbody>
         <tfoot>
             <td colspan="2"></td>
-            <td><strong> TOTAL </strong></td>
-            <td><strong> {{ usd(total) }} </strong></td>
+            <td class="text-end"><strong> TOTAL </strong></td>
+            <td class="text-end"><strong> {{ usd(total) }} </strong></td>
         </tfoot>
     </table>
 {% endblock %}
