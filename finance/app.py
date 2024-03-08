@@ -219,10 +219,14 @@ def sell():
             return apology("Please enter correct symbol!")
 
         shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, symbol)[0]["shares"]
-
         if shares_owned < shares:
             return apology("You don't have enough shares!")
-        
+
+        current_cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
+        db.execute("UPDATE users SET cash = ? WHERE id = ?;", current_cash + item_price * shares, user_id)
+
+        db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?);",
+                       user_id, "sell", symbol, item_price, shares)
 
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
