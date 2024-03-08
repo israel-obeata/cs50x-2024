@@ -41,8 +41,8 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
-    stocks = db.execute("SELECT symbol, price, SUM(shares) AS totalShares FROM transactions WHERE id = ? GROUP BY symbol", user_id)
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+    stocks = db.execute("SELECT symbol, price, SUM(shares) AS totalShares FROM transactions WHERE id = ? GROUP BY symbol;", user_id)
+    cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
 
     total = cash
 
@@ -74,7 +74,7 @@ def buy():
             return apology("Shares must be a positive integer!")
 
         user_id = session["user_id"]
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
+        cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
         item_symbol = item["symbol"]
         item_price = item["price"]
         total_price = item_price * shares
@@ -83,7 +83,7 @@ def buy():
             return apology("CAN'T AFFORD!")
         else:
             db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_price, user_id)
-            db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?)",
+            db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?);",
                        user_id, "buy", symbol, item_price, shares)
 
         return redirect("/")
@@ -118,7 +118,7 @@ def login():
 
         # Query database for username
         rows = db.execute(
-            "SELECT * FROM users WHERE username = ?", request.form.get("username")
+            "SELECT * FROM users WHERE username = ?;", request.form.get("username")
         )
 
         # Ensure username exists and password is correct
@@ -190,7 +190,7 @@ def register():
         hash = generate_password_hash(password)
 
         try:
-            db.execute("INSERT INTO users (username, hash) VALUES (?, ?)", username, hash)
+            db.execute("INSERT INTO users (username, hash) VALUES (?, ?);", username, hash)
             return redirect("/")
         except:
             return apology("Username has already been registered!")
