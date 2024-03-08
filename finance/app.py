@@ -55,6 +55,11 @@ def buy():
         if not item:
             return apology("Invalid symbol!")
 
+        try:
+            shares = int(request.form.get("shares"))
+        except:
+            return apology("Shares must be an integer!")
+
     else:
         return render_template("buy.html")
 
