@@ -205,7 +205,14 @@ def sell():
     user_id = session["user_id"]
 
     if request.method == "POST":
-        pass
+        symbol = request.form.get("symbol")
+        try:
+            shares = int(request.form.ger("shares"))
+        except:
+            return apology("Shares must be an integer!")
+        if shares <= 0:
+            return apology("Shares must be a positive number!")
+
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
         return render_template("sell.html", symbols=symbols)
