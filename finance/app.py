@@ -109,7 +109,7 @@ def quote():
     if request.method == "POST":
         pass
     else:
-        reutrn render_template("quote.html")
+        return render_template("quote.html")
 
 
 @app.route("/register", methods=["GET", "POST"])
