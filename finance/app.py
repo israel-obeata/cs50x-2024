@@ -116,7 +116,7 @@ def quote():
         if not item:
             return apology("Invalid symbol!")
 
-        return render_template("quoted.html", item=item)
+        return render_template("quoted.html", item=item, usd_function=usd)
 
     else:
         return render_template("quote.html")
