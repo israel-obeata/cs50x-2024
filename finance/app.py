@@ -67,6 +67,8 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)
         print(f"\n\n{cash}\n\n")
 
+        return redirect("/")
+
     else:
         return render_template("buy.html")
 
