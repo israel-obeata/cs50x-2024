@@ -8,9 +8,10 @@
     <form action="/sell" method="post">
         <div class="mb-3">
             <select name=symbol>
-
+                {% for symbol in symbols %}
+                    
+                {% endfor %}
             </select>
-            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
         </div>
         <div class="mb-3">
             <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password">
