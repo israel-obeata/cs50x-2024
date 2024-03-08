@@ -71,6 +71,9 @@ def buy():
 
         if cash < total_price:
             return apology("Not enough cash!")
+        else:
+            db.execute("UPDATE users SET cash = ? WHERE id = ?", cash - total_price, user_id)
+            db.execute("INSERT INTO transactions (user_id, name, shares, price, type, symbol) VALUES (?, ?, ?, ?, ?, ?)")
 
         return redirect("/")
 
