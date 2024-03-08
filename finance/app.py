@@ -41,7 +41,7 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
-    stocks = db.execute("SELECT symbol, price, shares FROM transactions WHERE id = ? GROUP BY symbol", user_id)
+    stocks = db.execute("SELECT symbol, price, SUM(shares) FROM transactions WHERE id = ? GROUP BY symbol", user_id)
 
 
 @app.route("/buy", methods=["GET", "POST"])
