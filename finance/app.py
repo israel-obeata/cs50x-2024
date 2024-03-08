@@ -220,6 +220,10 @@ def sell():
 
         shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, symbol)[0]["shares"]
 
+        if shares_owned < shares:
+            return apology("You don't have enough shares!")
+        
+
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
         return render_template("sell.html", symbols=symbols)
