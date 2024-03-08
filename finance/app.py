@@ -207,7 +207,7 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         try:
-            shares = int(request.form.ger("shares"))
+            shares = int(request.form.get("shares"))
         except:
             return apology("Shares must be an integer!")
         if shares <= 0:
