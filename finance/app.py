@@ -41,6 +41,8 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
+    stocks = db.execute("SELECT symbol, price, shares FROM transactions WHERE id = ?", user_id)
+
 
 @app.route("/buy", methods=["GET", "POST"])
 @login_required
