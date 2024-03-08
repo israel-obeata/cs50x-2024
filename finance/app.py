@@ -213,6 +213,8 @@ def sell():
         if shares <= 0:
             return apology("Shares must be a positive number!")
 
+        
+
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
         return render_template("sell.html", symbols=symbols)
