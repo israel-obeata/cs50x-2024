@@ -218,7 +218,7 @@ def sell():
         else:
             return apology("Please enter correct symbol!")
 
-        shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, symbol)
+        shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol;", user_id, symbol)[0]["shares"]
 
     else:
         symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol;", user_id)
