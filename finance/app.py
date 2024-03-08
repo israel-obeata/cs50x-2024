@@ -65,7 +65,12 @@ def buy():
 
         user_id = session["user_id"]
         cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
-        i
+        item_symbol = item["symbol"]
+        item_price = item["price"]
+        total_price = item_price * shares
+
+        if cash < total_price:
+            return apology("Not enough cash!")
 
         return redirect("/")
 
