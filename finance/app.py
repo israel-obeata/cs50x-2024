@@ -126,6 +126,9 @@ def register():
 
         if confirmation != password:
             return apology("Password do not match!")
+
+        return redirect("/")
+    
     else:
         return render_template("register.html")
 
