@@ -211,6 +211,9 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol")
 
+        if not lookup(symbol):
+            return apology("Invalid symbol")
+
         try:
             shares = int(request.form.get("shares"))
         except:
