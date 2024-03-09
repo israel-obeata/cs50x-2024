@@ -61,7 +61,7 @@ def buy():
         symbol = request.form.get("symbol")
         item = lookup(symbol)["symbol"]
 
-        if not item:
+        if item is None:
             return apology("Invalid symbol!")
 
         try:
