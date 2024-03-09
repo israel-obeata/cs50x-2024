@@ -222,11 +222,11 @@ def sell():
         if shares_owned < shares:
             return apology("You don't have enough shares!")
 
-        current_cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
+        owned_cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
 
         item_price = lookup(symbol)["price"]
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?;", current_cash + item_price * shares, user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?;", owned_cash + item_price * shares, user_id)
 
         db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?);",
                        user_id, "sell", symbol, item_price, -shares)
