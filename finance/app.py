@@ -209,8 +209,6 @@ def sell():
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        if symbol == "Symbol":
-            return apology("Invalid symbol")
 
         if not lookup(symbol):
             return apology("Invalid symbol")
