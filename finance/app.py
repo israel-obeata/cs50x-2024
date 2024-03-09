@@ -226,7 +226,7 @@ def sell():
 
         item_price = lookup(symbol)["price"]
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?;", owned_cash + item_price * shares, user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?;", round(owned_cash + item_price * shares, 2), user_id)
 
         db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?);",
                        user_id, "sell", symbol, item_price, -shares)
