@@ -41,7 +41,8 @@ def index():
     """Show portfolio of stocks"""
     user_id = session["user_id"]
 
-    stocks = db.execute("SELECT symbol, price, SUM(shares) AS totalShares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+    stocks = db.execute(
+        "SELECT symbol, price, SUM(shares) AS totalShares FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
     cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
     total = cash
@@ -97,9 +98,9 @@ def buy():
 def history():
     """Show history of transactions"""
     user_id = session["user_id"]
-    transactions = db.execute("SELECT symbol, shares, price, time FROM transactions WHERE user_id = ?", user_id)
+    transactions = db.execute(
+        "SELECT symbol, shares, price, time FROM transactions WHERE user_id = ?", user_id)
     return render_template("history.html", transactions=transactions, usd=usd)
-
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -210,7 +211,7 @@ def sell():
     if request.method == "POST":
         symbol = request.form.get("symbol")
         if not symbol:
-                return apology("Must Give Symbol")
+            return apology("Must Give Symbol")
 
         try:
             shares = int(request.form.get("shares"))
@@ -219,7 +220,8 @@ def sell():
         if shares <= 0:
             return apology("Shares must be a positive number!")
 
-        shares_owned = db.execute("SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["shares"]
+        shares_owned = db.execute(
+            "SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["shares"]
         if shares_owned < shares:
             return apology("You don't have enough shares!")
 
@@ -227,14 +229,16 @@ def sell():
 
         item_price = lookup(symbol)["price"]
 
-        db.execute("UPDATE users SET cash = ? WHERE id = ?", round(owned_cash + item_price * shares, 2), user_id)
+        db.execute("UPDATE users SET cash = ? WHERE id = ?", round(
+            owned_cash + item_price * shares, 2), user_id)
 
         db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?)",
-                       user_id, "sell", symbol, item_price, -shares)
+                   user_id, "sell", symbol, item_price, -shares)
 
         flash("Sold!")
         return redirect("/")
 
     else:
-        symbols = db.execute("SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
+        symbols = db.execute(
+            "SELECT symbol FROM transactions WHERE user_id = ? GROUP BY symbol", user_id)
         return render_template("sell.html", symbols=symbols)
