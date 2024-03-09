@@ -209,7 +209,7 @@ def sell():
 
     if request.method == "POST":
         symbol = request.form.get("symbol")
-        print("symbol", type(symbol))
+
         try:
             shares = int(request.form.get("shares"))
         except:
@@ -224,9 +224,6 @@ def sell():
         owned_cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
 
         item_price = lookup(symbol)["price"]
-        print("item_price", type(item_price))
-        symbol_s = lookup(symbol)["symbol"]
-        print("symbol['symbol']", type(symbol_s))
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?;", round(owned_cash + item_price * shares, 2), user_id)
 
