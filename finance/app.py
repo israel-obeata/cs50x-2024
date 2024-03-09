@@ -220,7 +220,7 @@ def sell():
             return apology("Shares must be an integer!")
         if shares <= 0:
             return apology("Shares must be a positive number!")
-        
+
         shares_owned = db.execute(
             "SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["shares"]
         if shares_owned < shares:
@@ -228,13 +228,17 @@ def sell():
 
         owned_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
+
+        item_symbol = lookup(symbol)["symbol"]
+        if not item_symbol:
+            return apology("Invalid symbol")
         item_price = lookup(symbol)["price"]
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?", round(
             owned_cash + item_price * shares, 2), user_id)
 
         db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?)",
-                   user_id, "sell", symbol, item_price, -shares)
+                   user_id, "sell", item_symbol, item_price, -shares)
 
         flash("Sold!")
         return redirect("/")
