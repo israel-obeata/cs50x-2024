@@ -58,11 +58,12 @@ def index():
 def buy():
     """Buy shares of stock"""
     if request.method == "POST":
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
+        if not symbol:
+            return apology("Please enter a symbol!")
 
-        item = lookup(symbol)["symbol"]
-
-        if item is None:
+        item = lookup(symbol)
+        if not item:
             return apology("Invalid symbol!")
 
         try:
