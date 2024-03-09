@@ -220,9 +220,9 @@ def sell():
             return apology("Shares must be an integer!")
         if shares <= 0:
             return apology("Shares must be a positive number!")
-
-        shares_owned = db.execute(
-            "SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["shares"]
+        else:
+            shares_owned = db.execute(
+                "SELECT shares FROM transactions WHERE user_id = ? AND symbol = ? GROUP BY symbol", user_id, symbol)[0]["shares"]
         if shares_owned < shares:
             return apology("You don't have enough shares!")
 
