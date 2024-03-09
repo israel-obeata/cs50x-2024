@@ -232,6 +232,7 @@ def sell():
         db.execute("INSERT INTO transactions (user_id, type, symbol, price, shares) VALUES (?, ?, ?, ?, ?);",
                        user_id, "sell", symbol, item_price, -shares)
 
+        flash("Sold!")
         return redirect("/")
 
     else:
