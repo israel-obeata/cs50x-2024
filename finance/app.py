@@ -226,7 +226,7 @@ def sell():
         item_price = lookup(symbol)["price"]
         print("item_price", type(item_price))
         symbol_s = lookup(symbol)["symbol"]
-        print("symbol["symbol"]", type(symbol_s))
+        print("symbol['symbol']", type(symbol_s))
 
         db.execute("UPDATE users SET cash = ? WHERE id = ?;", round(owned_cash + item_price * shares, 2), user_id)
 
