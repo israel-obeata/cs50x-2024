@@ -96,7 +96,8 @@ def buy():
 @login_required
 def history():
     """Show history of transactions"""
-    transactions = db.execute("SELECT symbol, shares, price, time FROM transactions")
+    user_id = session("user_id")
+    transactions = db.execute("SELECT symbol, shares, price, time FROM transactions WHERE user_id = ?", user_id)
     return render_template("history.html")
 
 
