@@ -75,7 +75,7 @@ def buy():
 
         user_id = session["user_id"]
         cash = db.execute("SELECT cash FROM users WHERE id = ?;", user_id)[0]["cash"]
-        item_symbol = item["symbol"]
+
         item_price = item["price"]
         total_price = item_price * shares
 
