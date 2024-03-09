@@ -228,7 +228,6 @@ def sell():
 
         owned_cash = db.execute("SELECT cash FROM users WHERE id = ?", user_id)[0]["cash"]
 
-
         item_symbol = lookup(symbol)["symbol"]
         if not item_symbol:
             return apology("Invalid symbol")
