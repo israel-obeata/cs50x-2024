@@ -1,10 +1,19 @@
 #include<stdio.h>
 #include<cs50.h>
 
-int main(void){
-    int h = get_int("Height: ");
+void print(int Height );
 
+int main(void){
+    int h = get_int("\nHeight: ");
+    print(h);
 }
 
 
-void 
+
+
+
+void print(int Height ){
+    for(int i=0;i<=Height;i++){
+        printf("#\n");
+    }
+}
