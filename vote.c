@@ -3,7 +3,7 @@
 
 int main(void)
 {
-  int amount = get_int("How many candidates: ");
+  int amount = get_int("\nHow many candidates: ");
    string names[amount];
    for(int i = 0; i < amount; i++){
         names[i] = get_string(" name: ");
