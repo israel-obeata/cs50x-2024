@@ -9,6 +9,6 @@ int main(void){
         i++;
     }
     while(strcmp(name[i],name[length]) != true){
-        
+        if (nam)
     }
 }
