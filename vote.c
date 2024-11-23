@@ -8,5 +8,7 @@ int main(void){
         name[i]= name;
         i++;
     }
-    while(strcmp(name[i],name[length]) != True)
+    while(strcmp(name[i],name[length]) != true){
+        
+    }
 }
