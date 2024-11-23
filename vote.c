@@ -2,5 +2,5 @@
 #include <stdio.h>
 
 int main(void){
-    string 
+    string name= get_string(")
 }
