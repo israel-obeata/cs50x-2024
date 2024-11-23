@@ -5,7 +5,7 @@
 int main(void){
     int length=get_int("voter's length: ");
     for(int i=0;i<length;i++){
-        string name= get_string("candidate: ");
+        char *name= get_string("candidate: ");
         name[i]= name;
         i++;
     }
