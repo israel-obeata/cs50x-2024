@@ -6,6 +6,7 @@ int main(void){
     for(int i=0;i<length;i++){
         string name= get_string("candidate: ");
         name[i]= name;
+        name
         i++;
     }
     while(strcmp(name[i],name[length]) != true){
