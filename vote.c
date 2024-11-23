@@ -8,7 +8,7 @@ int main(void)
    for(int i = 0; i < amount; i++){
         names[i] = get_string(" name: ");
         }
-        printf("%s", name[2]);
+        printf("%s", names[2]);
 }
 
 
