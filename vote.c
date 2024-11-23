@@ -2,6 +2,6 @@
 #include <stdio.h>
 
 int main(void){
-    i
-    string name= get_string("candidate: ")
+    int length=get_int("voter's length: ");
+    string name= get_string("candidate: ");
 }
