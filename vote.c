@@ -7,7 +7,7 @@ int main(void){
     for(int i=0;i<length;i++){
         char *name= get_string("candidate: ");
         po[i]= name;
-        i++;
+
     }
     printf("%s",po[3]);
     }
