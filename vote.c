@@ -1,14 +1,14 @@
 #include <cs50.h>
 #include <stdio.h>
-#include <string.h>
 
-int main(void){
-    int length=get_int("voter's length: ");
-    for(int i=0;i<length;i++){
-        char *name= get_string("candidate: ");
-        po[i]= name;
-
-    }
-    printf("%s",po[3]);
-    }
+int main(void)
+{
+  int amount = get_int("How many candidates: ");
+   string names[amount];
+   for(int i = 0; i < amount; i++){
+        names[i] = get_string(" name: ");
+        }
+        printf("%s", name[2]);
 }
+
+
