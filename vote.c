@@ -8,5 +8,5 @@ int main(void){
         name[i]= name;
         i++;
     }
-    
+    while(name[])
 }
