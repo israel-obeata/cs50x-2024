@@ -6,7 +6,7 @@ int main(void){
     int length=get_int("voter's length: ");
     for(int i=0;i<length;i++){
         string name= get_string("candidate: ");
-        char *name[i]= name;
+        name[i]= name;
         i++;
     }
     printf("%s",name[3]);
