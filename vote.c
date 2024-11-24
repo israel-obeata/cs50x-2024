@@ -8,7 +8,10 @@ int main(void)
    for(int i = 0; i < amount; i++){
         names[i] = get_string(" name: ");
         }
-        printf("%s", names[2]);
+      for(int j=0;j<amount;j++){
+         int n=0;
+         if(strcmp(names[]))
+      }
 }
 
 
