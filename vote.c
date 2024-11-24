@@ -17,7 +17,7 @@ int main(void)
           }
           names[j]=n;
         }
-          printf("%i",names[3]);
+          printf("%d",names[3]);
       }
 }
 
