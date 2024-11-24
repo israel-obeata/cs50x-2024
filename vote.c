@@ -15,7 +15,7 @@ int main(void)
           if(strcmp(names[j],names[p]) == 0){
             n++;
           }
-          int names[j]=n;
+          names[j]=n;
         }
           printf("%i",names[3]);
       }
