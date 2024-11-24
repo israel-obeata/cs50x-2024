@@ -11,9 +11,10 @@ int main(void)
       for(int j=0;j<amount;j++){
         for(int p=0;p<amount;p++){
           if(strcmp(names[j],names[p]) == 0){
-            
+            n++;
           }
         }
+          printf("%i",n)
       }
 }
 
