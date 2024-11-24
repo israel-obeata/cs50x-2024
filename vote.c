@@ -9,8 +9,9 @@ int main(void)
         names[i] = get_string(" name: ");
         }
       for(int j=0;j<amount;j++){
-         int n=0;
-         if(strcmp(names[]))
+        for(int p=0;p<amount;p++){
+          if(strcmp(names[]))
+        }
       }
 }
 
