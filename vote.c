@@ -20,6 +20,9 @@ int main(void){
                 if(strcmp(names[j+1],names[p])==0){
                   f++;
                 }
+                else{
+                  f=0;
+                }
         }
 
         printf("\n %s %d %d\n",names[j],n,f);
