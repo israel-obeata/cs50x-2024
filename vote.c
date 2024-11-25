@@ -11,7 +11,9 @@ int main(void){
   for(int j=0;j<amount;j++){
         int n=0;
         for(int p=0;p<amount;p++){
-                
+                if(strcmp(names[j],names[p])==0){
+                        
+                }
         }
   }
 }
