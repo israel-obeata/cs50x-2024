@@ -12,9 +12,10 @@ int main(void){
         int n=0;
         for(int p=0;p<amount;p++){
                 if(strcmp(names[j],names[p])==0){
-                        
+                        n++;
                 }
         }
+        printf("\n %s %d",names[j],n);
   }
 }
 
