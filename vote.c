@@ -21,8 +21,9 @@ int main(void){
                large=n;
              }
   }
-     if(n==large)
-        printf("\n%d\n",large);
+     if(n==large){
+        printf("\n%s %d\n",large);
+     }
   }
 
 
