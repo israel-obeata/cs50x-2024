@@ -17,7 +17,7 @@ int main(void){
                         n++;
                 }
         }
-        
+        if(u==j){
         printf("\n %s %d",names[j],n);
   }
 }
