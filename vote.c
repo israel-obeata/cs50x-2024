@@ -19,7 +19,7 @@ int main(void){
                 }
         }
 
-            if(strcmp(names[j+1],names[w])==0){
+            if(strcmp(names[j+1],names[p])==0){
                   f++;
             }
 
