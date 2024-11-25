@@ -21,13 +21,11 @@ int main(void){
                   f++;
                 }
         }
-            }
-
 
         printf("\n %s %d %d\n",names[j],n,f);
-
   }
-}
+  }
+
 
 
 
