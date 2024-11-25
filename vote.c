@@ -24,7 +24,7 @@ int main(void){
             }
         }
 
-        printf("\n %s %d\",names[j],n);
+        printf("\n %s %d %d\n",names[j],n,f);
 
   }
 }
