@@ -17,10 +17,6 @@ int main(void){
                 if(strcmp(names[j],names[p])==0){
                         n++;
                 }
-                if(j<amount-1){
-                if(strcmp(names[j+1],names[p])==0){
-                  f++;
-                }
                 
         }
         }
