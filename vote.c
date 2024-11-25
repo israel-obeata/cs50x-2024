@@ -3,8 +3,9 @@
 #include <string.h>
 
 int main(void){
-    string names[amount];
+
   int amount= get_int("\namount of voters: ");
+  string names[amount];
   for(int i=0;i<amount;i++){
         names[i]=get_string("names of candidates: ");
   }
