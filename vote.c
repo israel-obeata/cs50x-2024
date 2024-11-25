@@ -25,7 +25,10 @@ int main(void){
                   b+=n;
              }
              if(a<b){
-                  
+                  large +=b;
+             }
+             else{
+                  large +=a;
              }
         }
 
