@@ -26,7 +26,7 @@ int main(void){
              f++;
   }
      if(g==large){
-      char name[5]= names[f];
+      char name[8][8]= names[f];
      }
         printf("\n%s %d\n",name,large);
 
