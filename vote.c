@@ -11,6 +11,7 @@ int main(void){
   }
     int large = 0;
     int g=0;
+    int f=0;
   for(int j=0;j<amount;j++){
         int n=0;
         for(int p=0;p<amount;p++){
@@ -22,9 +23,10 @@ int main(void){
              if(n > large){
                large=n;
              }
+             f++;
   }
      if(g==large){
-        printf("\n%s %d\n",names[j],large);
+        printf("\n%s %d\n",names[f],large);
      }
   }
 
