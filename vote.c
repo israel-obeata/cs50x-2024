@@ -22,7 +22,7 @@ int main(void){
              }
   }
      if(n==large){
-        printf("\n%s %d\n",large);
+        printf("\n%s %d\n",names[j],large);
      }
   }
 
