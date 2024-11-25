@@ -22,13 +22,11 @@ int main(void){
              }
              if(n > large){
                large=n;
+               winner = names[j];
              }
              f++;
   }
-     if(g==large){
-      char name[8][8]= names[f];
-     }
-        printf("\n%s %d\n",name,large);
+      printf("\n%s %d\n",winner,large);
 
   }
 
