@@ -9,7 +9,7 @@ int main(void){
   for(int i=0;i<amount;i++){
         names[i]=get_string("names of candidates: ");
   }
-  int u = get_int("position: ");
+  int u = get_int("p
   for(int j=0;j<amount;j++){
         int n=0;
         for(int p=0;p<amount;p++){
@@ -17,9 +17,9 @@ int main(void){
                         n++;
                 }
         }
-        if(u==j){
+
         printf("\n %s %d\",names[j],n);
-        }
+
   }
 }
 
