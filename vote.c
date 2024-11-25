@@ -28,7 +28,7 @@ int main(void){
      if(g==large){
       string name= names[f];
      }
-        printf("\n%s %d\n",names[f],large);
+        printf("\n%s %d\n",name,large);
 
   }
 
