@@ -9,10 +9,11 @@ int main(void){
   for(int i=0;i<amount;i++){
         names[i]=get_string("names of candidates: ");
   }
-
+    int large = 0;
   for(int j=0;j<amount;j++){
         int n=0;
-        int f=0;
+        int a=0;
+        int b=0;
         for(int p=0;p<amount;p++){
                 if(strcmp(names[j],names[p])==0){
                   n++;
@@ -27,15 +28,18 @@ int main(void){
              if(a<b){
                   large +=b;
              }
-             else{
+             else if(a>b||a==b){
                   large +=a;
              }
-             
+             if(n > large){
+               large -=large;
+               large+=n;
+             }
         }
 
-        printf("\n %s %d %d\n",names[j],n,f);
+        printf("\n%d\n",large);
   }
-  }
+  
 
 
 
