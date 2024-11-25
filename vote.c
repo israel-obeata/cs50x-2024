@@ -19,16 +19,16 @@ int main(void){
                   n++;
                 }
              }
-             if(j=0){
+             if(j==0){
                   a+=n;
              }
-             if(j=1){
+             if(j==1){
                   b+=n;
              }
              if(a<b){
                   large +=b;
              }
-             else if(a>b||a==b){
+             else if(a>=b){
                   large +=a;
              }
              if(n > large){
@@ -39,7 +39,7 @@ int main(void){
 
         printf("\n%d\n",large);
   }
-  
+
 
 
 
