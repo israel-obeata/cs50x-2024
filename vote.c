@@ -21,9 +21,6 @@ int main(void){
                   f++;
                 }
         }
-
-            if(strcmp(names[j+1],names[p])==0){
-                  f++;
             }
 
 
