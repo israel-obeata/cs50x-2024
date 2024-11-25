@@ -30,6 +30,7 @@ int main(void){
              else{
                   large +=a;
              }
+             
         }
 
         printf("\n %s %d %d\n",names[j],n,f);
