@@ -18,11 +18,11 @@ int main(void){
                         n++;
                 }
         }
-        for(int w=1;w<amount;w++){
-            if(strcmp(names[j],names[w])==0){
+
+            if(strcmp(names[j+1],names[w])==0){
                   f++;
             }
-        }
+
 
         printf("\n %s %d %d\n",names[j],n,f);
 
