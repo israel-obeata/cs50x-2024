@@ -20,8 +20,8 @@ int main(void){
              if(n > large){
                large=n;
              }
-        }
-    
+  }
+     if(n==large)
         printf("\n%d\n",large);
   }
 
